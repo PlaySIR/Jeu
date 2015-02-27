@@ -32,6 +32,7 @@ namespace Statut
 		/// </summary>
 		/// <param name="statutT">Temporary Statut, set to neutral by default.</param>
 		public Statut(uint statutT = StatutConstants.NEUTRE)
+			: base()
 		{
 			this.statut = statutT;
 		}
