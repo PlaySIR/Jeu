@@ -6,23 +6,45 @@ public class Effets : MonoBehaviour {
 	/// <summary>
 	/// The max.
 	/// </summary>
-    private int 			_max;
+    private uint 			_max;
 		/// <summary>
 	/// The minimum.
 	/// </summary>
-    private int 			_min;
-
-
-
-
+    private uint 			_min;
 
 
 	/// <summary>
-	/// Gets the valeur effets.
+	/// Initializes a new instance of the <see cref="Effets"/> class.
 	/// </summary>
-	/// <returns>The valeur effets.</returns>
-   public int ValeurEffets{
-   get{
-       return 0;
-    }
+	/// <param name="max">Max.</param>
+	/// <param name="min">Minimum.</param>
+	public Effets(uint max, uint min){
+		this._max=max;
+		this._min=min;
+	}
+
+
+	/// <summary>
+	/// Gets the effet max.
+	/// </summary>
+	/// <value>The effet max.</value>
+   public uint EffetMax{
+		get{
+			return this._max;
+		}
+	}
+
+	/// <summary>
+	/// Gets the effet minimum.
+	/// </summary>
+	/// <value>The effet minimum.</value>
+	public uint EffetMin{
+		get{
+			return this._min;
+		}
+	}
+
+
+
+
 }

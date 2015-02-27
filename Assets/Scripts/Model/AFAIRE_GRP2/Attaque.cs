@@ -120,7 +120,12 @@ public class Attaque : MonoBehaviour {
 	}
 
 
-
+	public int ValeurAttaque(){
+		return 0;
+		//TODO
+	
+	
+	}
 
 
 
