@@ -40,35 +40,41 @@ public class Cellule : MonoBehaviour {
 	/// <summary>
 	/// Gets the statut.
 	/// </summary>
-	/// <returns>The statut.</returns>
-	public Statut getStatut()
-	{
-		return this.statut;
+	/// <value>The statut.</value>
+	public Statut Statut {
+		get {
+			return statut;
+		}
 	}
 
 	/// <summary>
 	/// Gets the coordonnee.
 	/// </summary>
-	/// <returns>The coordonnee.</returns>
-	public Coordonnee getCoordonnee()
-	{
-		return this.coordonnee;
+	/// <value>The coordonnee.</value>
+	public Coordonnee Coordonnee {
+		get {
+			return coordonnee;
+		}
 	}
+
 	/// <summary>
 	/// Gets the decor.
 	/// </summary>
-	/// <returns>The decor.</returns>
-	public Decor getDecor()
-	{
-		return this.decor;
+	/// <value>The decor.</value>
+	public Decor Decor {
+		get {
+			return decor;
+		}
 	}
+
 	/// <summary>
-	/// Gets the team.
+	/// Gets the equipe appartenance.
 	/// </summary>
-	/// <returns>The team.</returns>
-	public Team getTeam()
-	{
-		return this.equipeAppartenance;
+	/// <value>The equipe appartenance.</value>
+	public Team EquipeAppartenance {
+		get {
+			return equipeAppartenance;
+		}
 	}
 
 	/// <summary>

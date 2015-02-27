@@ -34,45 +34,50 @@ public class Coordonnee : MonoBehaviour {
 	/// <summary>
 	/// Gets the X minimum.
 	/// </summary>
-	/// <returns>The X minimum.</returns>
-	public int getXMin()
-	{
-		return this.xMin;
+	/// <value>The X minimum.</value>
+	public int XMin {
+		get {
+			return xMin;
+		}
 	}
-
+	
 	/// <summary>
 	/// Gets the X max.
 	/// </summary>
-	/// <returns>The X max.</returns>
-	public int getXMax()
-	{
-		return this.xMin + this.padding;
+	/// <value>The X max.</value>
+	public int XMax	{
+		get {
+			return this.xMin + this.padding;
+		}
 	}
 
 	/// <summary>
 	/// Gets the Y minimum.
 	/// </summary>
-	/// <returns>The Y minimum.</returns>
-	public int getYMin()
-	{
-		return this.yMin;
+	/// <value>The Y minimum.</value>
+	public int YMin {
+		get {
+			return yMin;
+		}
 	}
 
 	/// <summary>
 	/// Gets the Y max.
 	/// </summary>
-	/// <returns>The Y max.</returns>
-	public int getYMax()
-	{
-		return this.yMin + this.padding;
+	/// <value>The Y max.</value>
+	public int YMax	{
+		get {
+			return this.yMin + this.padding;
+		}
 	}
 
 	/// <summary>
-	/// Gets the size of tile.
+	/// Gets the padding.
 	/// </summary>
-	/// <returns>The size of tile.</returns>
-	public int getSizeOfTile()
-	{
-		return this.padding;
+	/// <value>The padding.</value>
+	public int Padding {
+		get {
+			return padding;
+		}
 	}
 }

@@ -25,7 +25,7 @@ namespace Statut_NS
 		/// <summary>
 		/// The statut.
 		/// </summary>
-	    private uint statut;
+	    private uint stat;
 	    
 		/// <summary>
 		/// Initializes a new instance of the <see cref="Statut.Statut"/> class.
@@ -40,12 +40,12 @@ namespace Statut_NS
 		/// <summary>
 		/// Gets the statut.
 		/// </summary>
-		/// <returns>The statut.</returns>
-		public uint getStatut()
-		{
-			return this.statut;
+		/// <value>The statut.</value>
+		public uint Stat {
+			get {
+				return stat;
+			}
 		}
-
 	}
 
 }
