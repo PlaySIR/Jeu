@@ -1,6 +1,11 @@
 using UnityEngine;
 using System.Collections;
 
+//Author :Billel
+
+/// <summary>
+/// Caracteristiques.
+/// </summary>
 public class Caracteristiques : MonoBehaviour {
 
 	/// <summary>
