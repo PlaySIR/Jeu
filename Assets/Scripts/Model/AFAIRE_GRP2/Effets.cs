@@ -6,7 +6,11 @@ public class Effets : MonoBehaviour {
     private int max;
     private int min;
 
-   public int getValeurAttaque()
+	/// <summary>
+	/// Gets the valeur effets.
+	/// </summary>
+	/// <returns>The valeur effets.</returns>
+   public int getValeurEffets()
     {
 
         return 0;
