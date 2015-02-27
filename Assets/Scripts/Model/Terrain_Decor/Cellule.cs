@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using Statut_NS;
+
 public class Cellule : MonoBehaviour {
 	/// <summary>
 	/// The statut.
 	/// </summary>
-    private Statut 			statut;
+	private Statut 			statut;
 	/// <summary>
 	/// The coordonnee.
 	/// </summary>

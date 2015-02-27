@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace Statut
+namespace Statut_NS
 {
 
 	static public class StatutConstants
