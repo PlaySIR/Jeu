@@ -53,6 +53,23 @@ public class Equipement : Objet {
 		}
 	}
 
+	/// <summary>
+	/// Gets the name of equipment.
+	/// </summary>
+	/// <value>The name</value>
+	public string Nom {
+		get {
+			return this._nom;
+		}
+	}
 
-
+	/// <summary>
+	/// Gets the description.
+	/// </summary>
+	/// <value>The description.</value>
+	public string Description {
+		get {
+			return this._description;			}
+		}
+	}
 }

@@ -151,12 +151,15 @@ public class Personnage : MonoBehaviour {
 	}
 
 	/// <summary>
-	/// Gets the statut.
+	/// Gets or sets the statut.
 	/// </summary>
 	/// <value>The statut.</value>
 	public Statut Statut{
 		get {
 			return this._statut;
+		}
+		set {
+			this._statut = value;
 		}
 	}
 
@@ -179,6 +182,8 @@ public class Personnage : MonoBehaviour {
 			return this._ecole;
 		}
 	}
+
+
 
 
 }
