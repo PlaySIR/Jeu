@@ -37,6 +37,7 @@ namespace Statut_NS
 			this.statut = statutT;
 		}
 
+		#region Statut Getters
 		/// <summary>
 		/// Gets the statut.
 		/// </summary>
@@ -46,6 +47,12 @@ namespace Statut_NS
 				return stat;
 			}
 		}
+
+		#endregion
+
+		#region Statut Methods
+
+		#endregion
 	}
 
 }
