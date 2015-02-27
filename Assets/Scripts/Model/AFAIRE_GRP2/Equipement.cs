@@ -11,6 +11,14 @@ public class Equipement : Objet {
 	/// The _caracteristiques.
 	/// </summary>
 	private Caracteristiques _caracteristiques;
+	/// <summary>
+	/// The nom.
+	/// </summary>
+	private string _nom;
+	/// <summary>
+	/// The description.
+	/// </summary>
+	private string _description;
 
 
 	//constructeur
@@ -20,8 +28,16 @@ public class Equipement : Objet {
 	/// <param name="caracteristiques">Caracteristiques.</param>
 	/// <param name="nom">Nom.</param>
 	/// <param name="description">Description.</param>
-	public Equipement(Caracteristiques caracteristiques, string nom, string description): base(nom, description){
+	public Equipement(Caracteristiques caracteristiques, string nom, string description){
+
+
+		//attention equipement herite de objet donc il faudra supprimer les attributs nom et description 
+		//de cette classe et mettre dans le constructeur : public Equipement(Caracteristiques caracteristiques, string nom, string description) : base(nom,description){...}
+
+
 		this._caracteristiques = caracteristiques;
+		this._nom = nom;
+		this._description = description;
 	}
 
 	//méthodes
@@ -36,5 +52,7 @@ public class Equipement : Objet {
 			return this._caracteristiques;
 		}
 	}
+
+
 
 }

@@ -12,7 +12,7 @@ public class Arme : Equipement {
 	/// Initializes a new instance of the <see cref="Arme"/> class.
 	/// </summary>
 	/// <param name="attack">Attack.</param>
-	public Arme (Attaque attack, Caracteristiques caracteristiques):base(caracteristiques){
+	public Arme (Attaque attack, Caracteristiques caracteristiques, string nom, string description):base(caracteristiques, nom, description){
 
 		this._attaque = attack;
 	}
@@ -29,10 +29,5 @@ public class Arme : Equipement {
 			return this._attaque;
 		}
 	}
-
-	public Caracteristiques Caracteristiques {
-		get {
-			return base.Caracteristiques;
-		}
-	}
+	
 }
