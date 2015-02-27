@@ -92,5 +92,14 @@ public class Team : MonoBehaviour {
 		return this.personnages.Keys;
 	}
 
+	/// <summary>
+	/// Gets the ecole.
+	/// </summary>
+	/// <value>The ecole.</value>
+	public Ecole Ecole {
+		get {
+			return ecole;
+		}
+	}
 #endregion
 }
