@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//Author :Billel
+
+/// <summary>
+/// Effets.
+/// </summary>
 public class Effets : MonoBehaviour {
 
 	/// <summary>
@@ -44,7 +49,12 @@ public class Effets : MonoBehaviour {
 		}
 	}
 
-
-
+	/// <summary>
+	/// Value of the attack.
+	/// </summary>
+	/// <returns>The attaque.</returns>
+	public int ValeurAttaque(){
+		return (int)Random.Range(EffetMin,EffetMax);
+	}
 
 }

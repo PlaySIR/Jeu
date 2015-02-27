@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//Author :Billel
+/// <summary>
+/// Buff.
+/// </summary>
 public class Buff : MonoBehaviour {
 
 	/// <summary>

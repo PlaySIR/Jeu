@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//Author :Billel
+/// <summary>
+/// Element.
+/// </summary>
 public class Element : MonoBehaviour {
 
 	/// <summary>

@@ -2,6 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 
+//Author : Billel
+
+
+/// <summary>
+/// Attaque.
+/// </summary>
 public class Attaque : MonoBehaviour {
 
 	/// <summary>
@@ -14,17 +20,19 @@ public class Attaque : MonoBehaviour {
     private string			 	_description;
 
 	/// <summary>
-	/// The _effets.
+	/// The effets.
 	/// </summary>
     private List<Effets> 		_effets;
 
 	/// <summary>
-	/// The _effets critiques.
+	/// The effets critiques.
 	/// </summary>
     private List<Effets> 		_effetsCritiques;
 
 	/// <summary>
-	/// the _cooldown.
+	/// the cooldown.
+	/// cooldown is the number of rounds before relaunching 
+	/// the attack (by dfaut = 0)
 	/// </summary>
 	///<description>The necessery time to re-use the attack</description> 
     private int			 		_cooldown;
@@ -120,12 +128,7 @@ public class Attaque : MonoBehaviour {
 	}
 
 
-	public int ValeurAttaque(){
-		return 0;
-		//TODO
-	
-	
-	}
+
 
 
 
