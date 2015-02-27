@@ -10,9 +10,14 @@ public class Magasin : MonoBehaviour {
 		get { return _nom;}
 	}
 
-    private List<Objet> _objets;
-	public List<Objet> Objets{
-		get { return _objets; }
+    private Inventaire _inventaire;
+	public Inventaire Inventaire{
+		get { return _inventaire; }
+	}
+
+	private double _tarifApplique;
+	public double TarifApplique{
+		get { return _tarifApplique; }
 	}
 
 	/// <summary>
@@ -20,9 +25,10 @@ public class Magasin : MonoBehaviour {
 	/// </summary>
 	/// <param name="nom">Nom.</param>
 	/// <param name="objets">Objets.</param>
-	public Magasin(string nom, List<Objet> objets){
+	public Magasin(string nom, Inventaire inventaire, double tarifApplique){
 		this._nom = nom;
-		this._objets = objets;
+		this._inventaire = inventaire;
+		this._tarifApplique = tarifApplique;
 	}
 
     public Objet vendre() {
