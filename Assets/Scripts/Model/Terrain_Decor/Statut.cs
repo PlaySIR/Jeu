@@ -6,7 +6,7 @@ public class Statut : MonoBehaviour {
 
     private int statut;
     
-    public static int OFFENSIF, DEFENSIF, Neutre;
+    public static int OFFENSIF, DEFENSIF, NEUTRE;
 
 
 

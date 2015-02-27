@@ -30,10 +30,30 @@ public class Coordonnee : MonoBehaviour {
 		return this.xMin;
 	}
 
+	/// <summary>
+	/// Gets the X max.
+	/// </summary>
+	/// <returns>The X max.</returns>
 	public int getXMax()
 	{
 		return this.xMin + this.padding;
 	}
-	
 
+	/// <summary>
+	/// Gets the Y minimum.
+	/// </summary>
+	/// <returns>The Y minimum.</returns>
+	public int getYMin()
+	{
+		return this.yMin;
+	}
+
+	/// <summary>
+	/// Gets the Y max.
+	/// </summary>
+	/// <returns>The Y max.</returns>
+	public int getYMax()
+	{
+		return this.yMin + this.padding;
+	}
 }
