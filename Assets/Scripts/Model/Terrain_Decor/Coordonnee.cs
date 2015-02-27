@@ -31,6 +31,7 @@ public class Coordonnee : MonoBehaviour {
 		this.padding = paddingT;
 	}
 
+#region Coordonnee Getters
 	/// <summary>
 	/// Gets the X minimum.
 	/// </summary>
@@ -80,4 +81,5 @@ public class Coordonnee : MonoBehaviour {
 			return padding;
 		}
 	}
+#endregion
 }
