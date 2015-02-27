@@ -14,11 +14,11 @@ public class Equipement : Objet {
 	/// <summary>
 	/// The nom.
 	/// </summary>
-	private string _nom;
+	protected string _nom;
 	/// <summary>
 	/// The description.
 	/// </summary>
-	private string _description;
+	protected string _description;
 
 
 	//constructeur
