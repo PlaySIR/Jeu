@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Decor.
+/// @author aquettier/Tha1n
+/// </summary>
 public class Decor : MonoBehaviour {
 
     private string 		nom;

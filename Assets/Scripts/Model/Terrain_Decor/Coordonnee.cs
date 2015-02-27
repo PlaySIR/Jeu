@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Coordonnee.
+/// @author aquettier/Tha1n
+/// </summary>
 public class Coordonnee : MonoBehaviour {
 
 	/// <summary>

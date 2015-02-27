@@ -1,9 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Statut Namespace
+/// @author aquettier/Tha1n
+/// </summary>
 namespace Statut_NS
 {
-
+	/// <summary>
+	/// Statut constants.
+	/// </summary>
 	static public class StatutConstants
 	{
 		/// <summary>
@@ -20,6 +26,9 @@ namespace Statut_NS
 		public const uint NEUTRE 	= 0;
 	}
 
+	/// <summary>
+	/// Statut.
+	/// </summary>
 	public class Statut : MonoBehaviour {
 
 		/// <summary>

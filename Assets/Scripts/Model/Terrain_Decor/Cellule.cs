@@ -3,6 +3,10 @@ using System.Collections;
 
 using Statut_NS;
 
+/// <summary>
+/// Cellule.
+/// @author aquettier/Tha1n
+/// </summary>
 public class Cellule : MonoBehaviour {
 	/// <summary>
 	/// The statut.

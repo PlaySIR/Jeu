@@ -2,7 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 
-
+/// <summary>
+/// Team.
+/// @author aquettier/Tha1n
+/// </summary>
 public class Team : MonoBehaviour {
 
 	/// <summary>
