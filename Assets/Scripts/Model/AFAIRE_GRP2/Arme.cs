@@ -2,6 +2,31 @@
 using System.Collections;
 
 public class Arme : Equipement {
-	Attaque attaque;
+	/// <summary>
+	/// The _attaque.
+	/// </summary>
+	Attaque _attaque;
 
+	//constructeur
+	/// <summary>
+	/// Initializes a new instance of the <see cref="Arme"/> class.
+	/// </summary>
+	/// <param name="attack">Attack.</param>
+	public Arme (Attaque attack){
+
+		this._attaque = attack;
+	}
+
+
+
+
+	/// <summary>
+	/// Gets the attaque.
+	/// </summary>
+	/// <value>The attaque.</value>
+	public Attaque Attaque{
+		get{
+			return this._attaque;
+		}
+	}
 }

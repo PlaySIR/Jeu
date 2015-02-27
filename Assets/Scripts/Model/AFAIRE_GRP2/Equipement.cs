@@ -5,5 +5,4 @@ public class Equipement : Objet {
 
 	Caracteristiques caracteristiques;
 
-
 }

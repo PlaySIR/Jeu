@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class Attaque : MonoBehaviour {
 
 	/// <summary>
-	/// The nom.
+	/// The _nom.
 	/// </summary>
     private string 				_nom;
 	/// <summary>
@@ -14,17 +14,17 @@ public class Attaque : MonoBehaviour {
     private string			 	_description;
 
 	/// <summary>
-	/// List of the effets.
+	/// The _effets.
 	/// </summary>
     private List<Effets> 		_effets;
 
 	/// <summary>
-	/// List of the effets critiques.
+	/// The _effets critiques.
 	/// </summary>
     private List<Effets> 		_effetsCritiques;
 
 	/// <summary>
-	/// the cooldown.
+	/// the _cooldown.
 	/// </summary>
 	///<description>The necessery time to re-use the attack</description> 
     private int			 		_cooldown;
