@@ -63,7 +63,7 @@ public class Attaque : MonoBehaviour {
 	/// Gets the nom.
 	/// </summary>
 	/// <returns>The nom.</returns>
-	string Nom{
+	public string Nom{
 		get{
 			return this._nom;
 		}
@@ -73,7 +73,7 @@ public class Attaque : MonoBehaviour {
 	/// Gets the description.
 	/// </summary>
 	/// <returns>The description.</returns>
-	string Description{
+	public string Description{
 		get{
 			return this._description;
 		}
@@ -83,7 +83,7 @@ public class Attaque : MonoBehaviour {
 	/// Gets the element.
 	/// </summary>
 	/// <returns>The element.</returns>
-	Element Element{
+	public Element Element{
 		get{
 			return this._element;
 		}
@@ -93,15 +93,31 @@ public class Attaque : MonoBehaviour {
 	/// Gets the cooldown.
 	/// </summary>
 	/// <returns>The cooldown.</returns>
-	int Cooldown{
+	public int Cooldown{
 		get{
 			return this._cooldown;
 		}
 	}
 
+	/// <summary>
+	/// Gets the effets.
+	/// </summary>
+	/// <value>The effets.</value>
+	public List<Effets> Effets{
+		get{
+			return this._effets;
+		}
+	}
 
-
-
+	/// <summary>
+	/// Gets the effets critiques.
+	/// </summary>
+	/// <value>The effets critiques.</value>
+	public List<Effets> EffetsCritiques{
+		get{
+			return this._effetsCritiques;
+		}
+	}
 
 
 

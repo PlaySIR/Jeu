@@ -2,12 +2,27 @@ using UnityEngine;
 using System.Collections;
 
 public class Caracteristiques : MonoBehaviour {
-	
-	private uint _vitalite;
-	private uint _force;
-	private uint _defense;
-	private uint _initiative;
-	private uint _pointMouvement;
+
+	/// <summary>
+	/// The _vitalite.
+	/// </summary>
+	private uint 			_vitalite;
+	/// <summary>
+	/// The _force.
+	/// </summary>
+	private uint			 _force;
+	/// <summary>
+	/// The _defense.
+	/// </summary>
+	private uint 			_defense;
+	/// <summary>
+	/// The _initiative.
+	/// </summary>
+	private uint 			_initiative;
+	/// <summary>
+	/// The _point mouvement.
+	/// </summary>
+	private uint			 _pointMouvement;
 	
 	/// <summary>
 	/// Initializes a new instance of the <see cref="Caracteristiques"/> class.
@@ -29,7 +44,7 @@ public class Caracteristiques : MonoBehaviour {
 	/// Gets the vitalite.
 	/// </summary>
 	/// <returns>The vitalite.</returns>
-	uint Vitalite{
+	public uint Vitalite{
 		get{
 			return this._vitalite;
 		}
@@ -39,7 +54,7 @@ public class Caracteristiques : MonoBehaviour {
 	/// Gets the force.
 	/// </summary>
 	/// <returns>The force.</returns>
-	uint Force{
+	public uint Force{
 		get{
 			return this._force;
 		}
@@ -49,7 +64,7 @@ public class Caracteristiques : MonoBehaviour {
 	/// Gets the defense.
 	/// </summary>
 	/// <returns>The defense.</returns>
-	uint Defense{
+	public uint Defense{
 		get{
 			return this._defense;
 		}
@@ -59,7 +74,7 @@ public class Caracteristiques : MonoBehaviour {
 	/// Gets the initiative.
 	/// </summary>
 	/// <returns>The initiative.</returns>
-	uint Initiative{
+	public uint Initiative{
 		get{
 			return this._initiative;
 		}
@@ -69,42 +84,42 @@ public class Caracteristiques : MonoBehaviour {
 	/// Gets the point mouvement.
 	/// </summary>
 	/// <returns>The point mouvement.</returns>
-	uint PointMouvement{
+	public uint PointMouvement{
 		get{
 			return this._pointMouvement;
 		}
 	}
 	
 	/// <summary>
-	/// Adds the vitalite.
+	/// Adds points to the vitalite.
 	/// </summary>
-	/// <param name="rajout">Rajout.</param>
-	void addVitalite(uint rajout){
-		this._vitalite+=rajout;
+	/// <param name="points">Points.</param>
+	public void addVitalite(uint points){
+		this._vitalite+=points;
 	}
 	
 	/// <summary>
-	/// Adds the force.
+	/// Adds points to the force.
 	/// </summary>
-	/// <param name="rajout">Rajout.</param>
-	void addForce(uint rajout){
-		this._force+=rajout;
+	/// <param name="points">Points.</param>
+	public void addForce(uint points){
+		this._force+=points;
 	}
 	
 	/// <summary>
-	/// Adds the defense.
+	/// Adds points to the defense.
 	/// </summary>
-	/// <param name="rajout">Rajout.</param>
-	void addDefense(uint rajout){
-		this._defense+=rajout;
+	/// <param name="points">Points.</param>
+	public void addDefense(uint points){
+		this._defense+=points;
 	}
 	
 	/// <summary>
-	/// Adds the initiative.
+	/// Adds points to the initiative.
 	/// </summary>
-	/// <param name="rajout">Rajout.</param>
-	void addInitiative(uint rajout){
-		this._initiative+=rajout;
+	/// <param name="points">Points.</param>
+	public void addInitiative(uint points){
+		this._initiative+=points;
 	}
 	
 }

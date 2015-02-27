@@ -66,7 +66,7 @@ public class Element : MonoBehaviour {
 	/// Gets the nom.
 	/// </summary>
 	/// <returns>The nom.</returns>
-	string Nom{
+	public string Nom{
 		get{
 			return this._nom;
 		}
@@ -76,7 +76,7 @@ public class Element : MonoBehaviour {
 	/// Gets the element resistance.
 	/// </summary>
 	/// <returns>The resistance.</returns>
-	Element Resistance{
+	public Element Resistance{
 		get{
 			return this._resistance;
 		}
@@ -86,7 +86,7 @@ public class Element : MonoBehaviour {
 	/// Gets the element faiblesse.
 	/// </summary>
 	/// <returns>The faiblesse.</returns>
-	Element Faiblesse{
+	public Element Faiblesse{
 		get{
 			return this._faiblesse;
 		}

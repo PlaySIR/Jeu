@@ -3,16 +3,26 @@ using System.Collections;
 
 public class Effets : MonoBehaviour {
 
-    private int max;
-    private int min;
+	/// <summary>
+	/// The max.
+	/// </summary>
+    private int 			_max;
+		/// <summary>
+	/// The minimum.
+	/// </summary>
+    private int 			_min;
+
+
+
+
+
 
 	/// <summary>
 	/// Gets the valeur effets.
 	/// </summary>
 	/// <returns>The valeur effets.</returns>
-   public int getValeurEffets()
-    {
-
-        return 0;
+   public int ValeurEffets{
+   get{
+       return 0;
     }
 }
