@@ -5,7 +5,7 @@ public class Arme : Equipement {
 	/// <summary>
 	/// The _attaque.
 	/// </summary>
-	Attaque _attaque;
+	private Attaque _attaque;
 
 	//constructeur
 	/// <summary>
