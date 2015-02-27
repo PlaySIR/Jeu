@@ -47,6 +47,7 @@ public class Cellule : MonoBehaviour {
 		}
 	}
 
+#region Cellule Getters
 	/// <summary>
 	/// Gets the coordonnee.
 	/// </summary>
@@ -77,6 +78,8 @@ public class Cellule : MonoBehaviour {
 		}
 	}
 
+#endregion
+#region Cellule Methods
 	/// <summary>
 	/// Determine if the <c>Cellule</c> is passable.
 	/// </summary>
@@ -85,4 +88,6 @@ public class Cellule : MonoBehaviour {
     {
         return this.decor.estFranchissable();
     }
+
+#endregion
 }
