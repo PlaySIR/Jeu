@@ -69,7 +69,7 @@ public class Equipement : Objet {
 	/// <value>The description.</value>
 	public string Description {
 		get {
-			return this._description;			}
+			return this._description;
 		}
 	}
 }
