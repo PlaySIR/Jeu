@@ -6,7 +6,7 @@ public class Element : MonoBehaviour {
 	/// <summary>
 	/// The nom.
 	/// </summary>
-    private string					 _nom;
+    private string				_nom;
 
 	/// <summary>
 	/// The resistance.
