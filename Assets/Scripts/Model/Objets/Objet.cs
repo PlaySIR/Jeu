@@ -5,9 +5,7 @@ public abstract class Objet : MonoBehaviour {
 
 	private string _nom;
 	public string Nom {
-		get {
-			return _nom;
-		}
+		get { return _nom; }
 	}
 
     private string _description;
