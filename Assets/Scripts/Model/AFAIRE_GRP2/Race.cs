@@ -8,19 +8,19 @@ public class Race : MonoBehaviour {
 	//attributs
 
 	/// <summary>
-	/// The nom.
+	/// The _nom.
 	/// </summary>
     private string 			_nom;
 	/// <summary>
-	/// The history.
+	/// The _history.
 	/// </summary>
     private string 			_history;
 	/// <summary>
-	/// The attaques.
+	/// The _attaques.
 	/// </summary>
     private List<Attaque> 	_attaques;
 	/// <summary>
-	/// The caracteristiques.
+	/// The _caracteristiques.
 	/// </summary>
     private Caracteristiques _caracteristiques;
 
