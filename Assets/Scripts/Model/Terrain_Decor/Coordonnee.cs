@@ -3,8 +3,17 @@ using System.Collections;
 
 public class Coordonnee : MonoBehaviour {
 
+	/// <summary>
+	/// The coordinate of x minimum.
+	/// </summary>
     private int xMin;
+	/// <summary>
+	/// The coordinate of y minimum.
+	/// </summary>
     private int yMin;
+	/// <summary>
+	/// The padding.
+	/// </summary>
 	private int padding;
 
 	/// <summary>
@@ -14,6 +23,7 @@ public class Coordonnee : MonoBehaviour {
 	/// <param name="yT">Low Y temporary.</param>
 	/// <param name="paddingT">Padding temporary.</param>
 	public Coordonnee(int xT, int yT, int paddingT)
+		: base()
 	{
 		this.xMin = xT;
 		this.yMin = yT;
@@ -55,5 +65,14 @@ public class Coordonnee : MonoBehaviour {
 	public int getYMax()
 	{
 		return this.yMin + this.padding;
+	}
+
+	/// <summary>
+	/// Gets the size of tile.
+	/// </summary>
+	/// <returns>The size of tile.</returns>
+	public int getSizeOfTile()
+	{
+		return this.padding;
 	}
 }
