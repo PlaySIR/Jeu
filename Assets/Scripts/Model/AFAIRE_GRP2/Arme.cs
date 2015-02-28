@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Arme : Equipement {
 	/// <summary>
+	/// @Author 
 	/// The _attaque.
 	/// </summary>
 	private Attaque _attaque;
@@ -12,7 +13,8 @@ public class Arme : Equipement {
 	/// Initializes a new instance of the <see cref="Arme"/> class.
 	/// </summary>
 	/// <param name="attack">Attack.</param>
-	public Arme (Attaque attack, Caracteristiques caracteristiques, string nom, string description):base(caracteristiques, nom, description){
+	public Arme (Attaque attack, Caracteristiques caracteristiques, string nom, 
+	             string description, int prix):base(caracteristiques, nom, description,prix){
 
 		this._attaque = attack;
 	}

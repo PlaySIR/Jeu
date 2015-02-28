@@ -2,6 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 
+/// <summary>
+/// @Author Kévin & Baptiste
+/// Personnage.
+/// </summary>
 public class Personnage : MonoBehaviour {
 
 	/// <summary>
@@ -62,8 +66,9 @@ public class Personnage : MonoBehaviour {
 	/// <param name="statut">Statut.</param>
 	/// <param name="buffs">Buffs.</param>
 	/// <param name="ecole">Ecole.</param>
-	public Personnage(string nom, Race race, Element element, Caracteristiques carac, List<Equipement> equipements, Arme arme, List<Attaque> attaques,
-	                  Statut statut, List<Buff> buffs, Ecole ecole)
+	public Personnage(string nom, Race race, Element element, Caracteristiques carac,
+	                  List<Equipement> equipements,Arme arme, List<Attaque> attaques, Statut statut, 
+	                  List<Buff> buffs, Ecole ecole)
 	{
 				this._nom = nom;
 				this._race = race;

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-//Author :Billel
+//@Author :Billel
 
 /// <summary>
 /// Effets.
@@ -50,10 +50,10 @@ public class Effets : MonoBehaviour {
 	}
 
 	/// <summary>
-	/// Value of the attack.
+	/// Value of the attack through the effect.
 	/// </summary>
 	/// <returns>The attaque.</returns>
-	public int ValeurAttaque(){
+	public int AttaqueEffets(){
 		return (int)Random.Range(EffetMin,EffetMax);
 	}
 

@@ -2,7 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 
-
+/// <summary>
+/// @Author Kévin & Billel
+/// Race.
+/// </summary>
 public class Race : MonoBehaviour {
 
 	//attributs
@@ -37,8 +40,10 @@ public class Race : MonoBehaviour {
 	/// <param name="attacks">Attacks.</param>
 	/// <param name="carac">Carac.</param>
 	public Race (string nom, string history, List<Attaque> attacks, Caracteristiques carac){
-		this._nom = nom; this._history = history;
-		this._attaques = attacks; this._caracteristiques = carac;
+		this._nom = nom;
+		this._history = history;
+		this._attaques = attacks;
+		this._caracteristiques = carac;
 
 	}
 

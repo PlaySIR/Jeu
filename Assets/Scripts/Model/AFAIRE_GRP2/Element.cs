@@ -26,28 +26,28 @@ public class Element : MonoBehaviour {
 	/// AIR < this < FEU.
 	/// <description>The TERRE =0</description>
 	/// </summary>
-	public const uint TERRE = 0 ; 
+	public static readonly uint TERRE = 0 ; 
 	/// <summary>
 	/// TERRE < this < EAU.
 	/// </summary>
 	/// <description> The FEU =1/description>
 
-	public const uint FEU = 1 ;
+	public static readonly uint FEU = 1 ;
 	/// <summary>
 	/// FEU < this < ELECRIC.
 	/// <description> The EAU =2 </description>
 	/// </summary>
-	public const uint EAU = 2 ; 
+	public static readonly uint EAU = 2 ; 
 	/// <summary>
 	/// FEU < this < ELECTRIC.
 	/// <description> The ELECTRIC =3 </description>
 	/// </summary>
-	public const uint ELECTRIC =3 ; 
+	public static readonly uint ELECTRIC =3 ; 
 	/// <summary>
 	/// ELECTRIC < this < TERRE.
 	/// <description>The AIR =4</description>
 	/// </summary>
-	public const uint AIR = 4;
+	public static readonly uint AIR = 4;
 
 
 
