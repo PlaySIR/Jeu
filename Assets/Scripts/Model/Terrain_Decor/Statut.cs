@@ -81,7 +81,7 @@ namespace Statut_NS
 		/// <see cref="Statut_NS.Statut"/>; otherwise, <c>false</c>.</returns>
 		public bool Equals(Statut obj)
 		{
-			if (this.stat.Equals(obj.Stat))
+			if (this.Stat.Equals(obj.Stat))
 				return true;
 			return false;
 		}
