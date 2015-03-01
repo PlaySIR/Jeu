@@ -73,6 +73,19 @@ namespace Statut_NS
 
 		#region Statut Methods
 
+		/// <summary>
+		/// Determines whether the specified <see cref="Statut_NS.Statut"/> is equal to the current <see cref="Statut_NS.Statut"/>.
+		/// </summary>
+		/// <param name="obj">The <see cref="Statut_NS.Statut"/> to compare with the current <see cref="Statut_NS.Statut"/>.</param>
+		/// <returns><c>true</c> if the specified <see cref="Statut_NS.Statut"/> is equal to the current
+		/// <see cref="Statut_NS.Statut"/>; otherwise, <c>false</c>.</returns>
+		public bool Equals(Statut obj)
+		{
+			if (this.stat.Equals(obj.Stat))
+				return true;
+			return false;
+		}
+
 		#endregion
 	}
 
