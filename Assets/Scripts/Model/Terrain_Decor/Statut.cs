@@ -86,6 +86,26 @@ namespace Statut_NS
 			return false;
 		}
 
+		/// <summary>
+		/// Gets the coef by statut.
+		/// </summary>
+		/// <returns>The coef by statut.</returns>
+		public double getCoefByStatut()
+		{
+			double result = StatutConstants.COEF_NEUT;
+
+			switch(this.Stat)
+			{
+			case StatutConstants.OFFENSIF:
+				result = StatutConstants.COEF_OFF;
+				break;
+			case StatutConstants.DEFENSIF:
+				result = StatutConstants.COEF_DEFF;
+			}
+
+			return result;
+		}
+
 		#endregion
 	}
 
