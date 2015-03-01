@@ -24,18 +24,6 @@ namespace Statut_NS
 		/// The value of NEUTRAL tile.
 		/// </summary>
 		public const uint NEUTRE 	= 0;
-		/// <summary>
-		/// The coef of an offensive tile.
-		/// </summary>
-		public const double COEF_OFF = 1.1;
-		/// <summary>
-		/// The coef of a deffensive tile.
-		/// </summary>
-		public const double COEF_DEFF = 1.1;
-		/// <summary>
-		/// The coef of a neutral tile.
-		/// </summary>
-		public const double COEF_NEUT = 1.0;
 	}
 
 	/// <summary>
@@ -52,10 +40,16 @@ namespace Statut_NS
 		/// Initializes a new instance of the <see cref="Statut.Statut"/> class.
 		/// </summary>
 		/// <param name="statutT">Temporary Statut, set to neutral by default.</param>
-		public Statut(uint statutT = StatutConstants.NEUTRE)
+		public Statut(uint statutT)
 			: base()
 		{
-			this.statut = statutT;
+			this.stat = statutT;
+		}
+
+		public Statut()
+			: base()
+		{
+			this(StatutConstants.NEUTRE);
 		}
 
 		#region Statut Getters
@@ -84,26 +78,6 @@ namespace Statut_NS
 			if (this.Stat.Equals(obj.Stat))
 				return true;
 			return false;
-		}
-
-		/// <summary>
-		/// Gets the coef by statut.
-		/// </summary>
-		/// <returns>The coef by statut.</returns>
-		public double getCoefByStatut()
-		{
-			double result = StatutConstants.COEF_NEUT;
-
-			switch(this.Stat)
-			{
-			case StatutConstants.OFFENSIF:
-				result = StatutConstants.COEF_OFF;
-				break;
-			case StatutConstants.DEFENSIF:
-				result = StatutConstants.COEF_DEFF;
-			}
-
-			return result;
 		}
 
 		#endregion
