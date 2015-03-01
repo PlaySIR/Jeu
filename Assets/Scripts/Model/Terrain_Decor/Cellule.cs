@@ -94,5 +94,20 @@ public class Cellule : MonoBehaviour {
         return this.decor.estFranchissable();
     }
 
+	/// <summary>
+	/// Determines whether the specified <see cref="Cellule"/> is equal to the current <see cref="Cellule"/>.
+	/// </summary>
+	/// <param name="obj">The <see cref="Cellule"/> to compare with the current <see cref="Cellule"/>.</param>
+	/// <returns><c>true</c> if the specified <see cref="Cellule"/> is equal to the current <see cref="Cellule"/>; otherwise, <c>false</c>.</returns>
+	public bool Equals(Cellule obj)
+	{
+		if (this.statut.Equals(obj.statut) &&
+		    this.coordonnee.Equals(obj.coordonnee) &&
+		    this.decor.Equals(obj.decor) &&
+		    this.equipeAppartenance.Equals(obj.decor))
+			return true;
+		return false;
+	}
+
 #endregion
 }
