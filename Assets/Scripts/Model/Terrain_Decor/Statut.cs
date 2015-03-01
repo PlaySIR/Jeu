@@ -46,6 +46,9 @@ namespace Statut_NS
 			this.stat = statutT;
 		}
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Statut_NS.Statut"/> class.
+		/// </summary>
 		public Statut()
 			: base()
 		{
