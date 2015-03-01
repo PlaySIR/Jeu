@@ -32,6 +32,14 @@ public class Decor : MonoBehaviour {
 		return this.estFranch;
 	}
 
+	public bool Equals(Cellule obj)
+	{
+		//TODO
+
+
+		//TODO
+	}
+
 	#endregion
 }
 
