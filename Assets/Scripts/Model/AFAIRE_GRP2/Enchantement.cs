@@ -53,6 +53,7 @@ public class Enchantement : Effets {
 	/// <value>The duree.</value>
 	public uint Duree{
 		get{
+
 			return this._duree;
 		}
 	}
@@ -76,8 +77,6 @@ public class Enchantement : Effets {
    }
 
 
+	
 
-
-
-	// TODO
 }

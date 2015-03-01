@@ -19,9 +19,6 @@ public class Arme : Equipement {
 		this._attaque = attack;
 	}
 
-
-
-
 	/// <summary>
 	/// Gets the attaque.
 	/// </summary>
@@ -31,5 +28,4 @@ public class Arme : Equipement {
 			return this._attaque;
 		}
 	}
-	
 }

@@ -65,4 +65,18 @@ public class Buff : MonoBehaviour {
 		}
 	}
 
+	/// <summary>
+	/// Decrease the duree.
+	/// </summary>
+	public void decDuree(){
+		this._duree-=1;
+	}
+	
+	/// <summary>
+	/// Decrease the latence.
+	/// </summary>
+	public void decLatence(){
+		this._latence-=1;
+	}
+
 }
