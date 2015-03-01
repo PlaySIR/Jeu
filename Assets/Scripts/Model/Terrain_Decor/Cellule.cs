@@ -101,10 +101,10 @@ public class Cellule : MonoBehaviour {
 	/// <returns><c>true</c> if the specified <see cref="Cellule"/> is equal to the current <see cref="Cellule"/>; otherwise, <c>false</c>.</returns>
 	public bool Equals(Cellule obj)
 	{
-		if (this.statut.Equals(obj.statut) &&
-		    this.coordonnee.Equals(obj.coordonnee) &&
-		    this.decor.Equals(obj.decor) &&
-		    this.equipeAppartenance.Equals(obj.decor))
+		if (this.Statut.Equals(obj.Statut) &&
+		    this.Coordonnee.Equals(obj.Coordonnee) &&
+		    this.Decor.Equals(obj.Decor) &&
+		    this.EquipeAppartenance.Equals(obj.EquipeAppartenance))
 			return true;
 		return false;
 	}
