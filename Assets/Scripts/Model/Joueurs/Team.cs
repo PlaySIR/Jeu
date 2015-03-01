@@ -67,8 +67,8 @@ public class Team : MonoBehaviour {
 	/// <returns><c>true</c> if the specified <see cref="Team"/> is equal to the current <see cref="Team"/>; otherwise, <c>false</c>.</returns>
 	public bool Equals(Team obj)
 	{
-		if (this.personnages.Equals(obj.personnages) &&
-		    this.ecole.Equals(obj.Ecole))
+		if (this.Personnages.Equals(obj.personnages) &&
+		    this.Ecole.Equals(obj.Ecole))
 			return true;
 		return false;
 	}
@@ -115,6 +115,12 @@ public class Team : MonoBehaviour {
 	public Ecole Ecole {
 		get {
 			return ecole;
+		}
+	}
+
+	private Dictionary<string, Personnage> Personnages {
+		get {
+			return personnages;
 		}
 	}
 #endregion
