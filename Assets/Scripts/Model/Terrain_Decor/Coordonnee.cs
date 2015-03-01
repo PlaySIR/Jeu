@@ -86,4 +86,24 @@ public class Coordonnee : MonoBehaviour {
 		}
 	}
 #endregion
+
+#region Coordonnee Methods
+
+	/// <summary>
+	/// Determines whether the specified <see cref="Coordonnee"/> is equal to the current <see cref="Coordonnee"/>.
+	/// </summary>
+	/// <param name="obj">The <see cref="Coordonnee"/> to compare with the current <see cref="Coordonnee"/>.</param>
+	/// <returns><c>true</c> if the specified <see cref="Coordonnee"/> is equal to the current <see cref="Coordonnee"/>; otherwise, <c>false</c>.</returns>
+	public bool Equals(Coordonnee obj)
+	{
+		if (this.xMin.Equals(obj.XMin) &&
+		    this.yMin.Equals(obj.YMin) &&
+		    this.padding.Equals(obj.Padding))
+			return true;
+		return false;
+	}
+
+
+
+#endregion
 }
