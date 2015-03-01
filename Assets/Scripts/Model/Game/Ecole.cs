@@ -26,26 +26,13 @@ public class Ecole : MonoBehaviour {
 	}
 
 
-	///<summary>
-	/// Récupération du nom de l'école
-	/// </summary>
-	public string getNom { get { return this._nom; } }
 
-	///<summary>
-	/// Récupération de la description de l'école
-	/// </summary>
-	public string getDescription { get { return this._description; } }
+	//Getters et setters
 
-	///<summary>
-	/// Récupération de la liste de magasins
-	/// </summary>
-	public List<Magasin> getMagasins { get { return this._magasins; } }
+	public string Nom { get { return this._nom; } }
+	public string Description { get { return this._description; } }
+	public List<Magasin> Magasins { get { return this._magasins; } set { this._magasins.Add(value); } }
 
-	///<summary>
-	/// Ajout d'un magasin à la liste
-	/// </summary>
-	/// <param name="mag">Magasin à ajouter à l'Ecole.</param> 
-	public void setMag (Magasin mag) { set { this._magasins.Add (mag); } }
 
 
 	//Notion d'appartenance à l'école ? -> permettrait de différencier alliés d'ennemis -> peut etre pas dans cette classe par contre

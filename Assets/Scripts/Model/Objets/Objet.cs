@@ -7,13 +7,13 @@ using System.Collections;
 public abstract class Objet : MonoBehaviour {
 
 	#region Attributs
-	private string _nom;
+	protected string _nom;
 	public string Nom { get { return _nom; } }
 
-    private string _description;
+    protected string _description;
 	public string Description { get { return _description; } }
 
-	private int _prix;
+	protected int _prix;
 	public int Prix { get { return _prix; } }
 	#endregion
 

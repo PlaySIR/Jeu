@@ -36,7 +36,7 @@ public class Magasin : MonoBehaviour {
 		//TODO Player doit etre codé.
     }
 
-	public boolean acheter(Objet objet)
+	public bool acheter(Objet objet)
 	{
 		//TODO Player doit etre codé.
 	}

@@ -10,6 +10,7 @@ public class Statistiques : MonoBehaviour {
 	//Attributs
 	private List<Monde> _mondes_deblockes;
 	private List<Monde> _mondes_blockes;
+	private Monde _encours;
 
 	// + Niveau de difficulté ?
 
@@ -17,9 +18,10 @@ public class Statistiques : MonoBehaviour {
 	/// Initializes a new instance of the <see cref="Statistiques"/> class.
 	/// </summary>
 	/// <param name="mondes">Liste de tous les mondes.</param>
-	/// <param name="actuel">Monde actuel du joueur = là où il ets rendu dans le jeu.</param>
+	/// <param name="actuel">Monde actuel du joueur = là où il est rendu dans le jeu.</param>
 	public Statistiques (List<Monde> mondes, Monde actuel){
 
+		this._encours = actuel;
 		bool blockes = false;
 
 		foreach (Monde courant in mondes){ 
@@ -36,6 +38,10 @@ public class Statistiques : MonoBehaviour {
 		}
 	}
 
+	//Getters
+	public List<Monde> MondesDeblockes { get { return this._mondes_deblockes; } }
+	public List<Monde> MondesBlockes { get { return this._mondes_blockes; } }
+
 	/// <summary>
 	/// Est-ce que tel monde apparait comme disponible ?
 	/// </summary>
@@ -46,6 +52,21 @@ public class Statistiques : MonoBehaviour {
 			if (courant == monde){return true;}
 		}
 		return false;
+	}
+
+	/// <summary>
+	/// Deblocke un monde pour le joueur.
+	/// </summary>
+	/// <param name="deblocke">Monde qui vient d'etre déblocké.</param>
+	public void Deblocke (Monde monde){
+		this._mondes_deblockes.Add (monde);
+		this._mondes_blockes.Remove (monde);
+	}
+
+
+	public void MondeTerminee (Monde fini){
+		this._encours = this._mondes_blockes; //récupère le 1er élement ? j'espère...
+		this.Deblocke (this._encours);
 	}
 
 

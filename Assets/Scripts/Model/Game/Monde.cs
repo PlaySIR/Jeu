@@ -10,13 +10,15 @@ public class Monde : MonoBehaviour {
 
 	//Attributs
     private string _nom;
-    private string _history;
-    private List<Mission> _missions;
+    private string _histoire;
+	private bool _estDisponible;
+	private bool _estFini;
+    private Mission[] _missions;
+	private int _encours;
 
     private List<Personnage> personnagesDisponibles; //Alliés ou PNJ ?
-    private List<Objet> objetsDisponibles;
-    private bool estDisponible;
-    private List<Ecole> ecoles;
+    private List<Objet> objetsDisponibles; //dépend de la difficulté ou du prix
+    private List<Ecole> ecoles; //2 constructeurs
 
 	//Liste d'écoles ? Ou une seule école ?
 
@@ -31,15 +33,55 @@ public class Monde : MonoBehaviour {
 	/// <param name="nom">Nom du monde.</param>
 	/// <param name="histoire">Histoire du monde.</param>
 	/// <param name="missions">Missions à effectuer sur le monde.</param>
-	public Monde (string nom, string histoire, List<Mission> missions){
+	/// <param name="fini">Vaut <c>true<c/> si toutes les missions ont été effectuées</param>
+	public Monde (string nom, string histoire, Mission[] missions, bool fini){
 		this._nom = nom;
-		this._history = histoire;
+		this._histoire = histoire;
 		this._missions = missions;
+		this._estFini = fini;
 
-		//Opérations pour savoir si le monde est disponible ou non
-		estDisponible = Statistiques.MondeDisponible(this);
+		//Opération pour savoir si le monde est disponible ou non
+		this._estDisponible = Statistiques.MondeDisponible(this);
+
+		//On initialise à la 1ère mission
+		this._encours = 0;
 	}
 
 
+	//Getters
+	public string Nom { get { return this._nom;} }
+	public string Histoire { get { return this._histoire; } }
+	public Mission[] Missions { get { return this._missions; } }
+	public bool Disponible { get { return this._estDisponible; } }
+	public bool Fini { get { return this._estFini; } }
+	public bool EnCours{ get { return this._encours; } }
+
+
+	public List<Objet> MissionFinie (Mission terminee){
+		//On incrémente la mission en cours
+		this._encours++;
+
+		//On génère les récompenses
+		List<Objet> butin = Mission.GenerateurRecompenses (3, 5, true);
+
+		//On vérifie si toutes les missions sont réalisées
+		bool fini = true;
+		for (int i=0; i<this.Missions.Length; ++i) {
+			if(i == this._encours){
+				fini=false;
+				break;
+			}
+		}
+
+		//Si toutes les missions sont finies on appelle la fonction "monde terminé" de stats
+		if (fini) {
+			this._estFini = true;
+			Statistiques.MondeTermine(this);
+		}
+
+		return butin;
+	}
+
+	
 
 }
