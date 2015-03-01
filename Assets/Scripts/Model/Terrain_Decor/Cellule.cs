@@ -41,6 +41,8 @@ public class Cellule : MonoBehaviour {
 		this.equipeAppartenance		= teamT;
 	}
 
+#region Cellule Getters
+	
 	/// <summary>
 	/// Gets the statut.
 	/// </summary>
@@ -51,7 +53,6 @@ public class Cellule : MonoBehaviour {
 		}
 	}
 
-#region Cellule Getters
 	/// <summary>
 	/// Gets the coordonnee.
 	/// </summary>
