@@ -136,12 +136,15 @@ public class Personnage : MonoBehaviour {
 	}		
 
 	/// <summary>
-	/// Gets the arme.
+	/// Gets or sets the arme.
 	/// </summary>
 	/// <value>The arme.</value>
 	public Arme Arme{
 		get {
 			return this._arme;
+		}
+		set {
+			this._arme = value;
 		}
 	}
 
@@ -153,6 +156,14 @@ public class Personnage : MonoBehaviour {
 		get {
 			return this._attaques;
 		}
+	}
+
+	/// <summary>
+	/// Ajouts the attaque.
+	/// </summary>
+	/// <param name="attack">Attack.</param>
+	public void ajoutAttaque (Attaque attack){
+		this._attaques.Add (attack);
 	}
 
 	/// <summary>
