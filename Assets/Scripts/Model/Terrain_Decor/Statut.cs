@@ -24,6 +24,18 @@ namespace Statut_NS
 		/// The value of NEUTRAL tile.
 		/// </summary>
 		public const uint NEUTRE 	= 0;
+		/// <summary>
+		/// The coef of an offensive tile.
+		/// </summary>
+		public const double COEF_OFF = 1.1;
+		/// <summary>
+		/// The coef of a deffensive tile.
+		/// </summary>
+		public const double COEF_DEFF = 1.1;
+		/// <summary>
+		/// The coef of a neutral tile.
+		/// </summary>
+		public const double COEF_NEUT = 1.0;
 	}
 
 	/// <summary>
