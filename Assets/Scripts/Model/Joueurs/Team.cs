@@ -60,6 +60,19 @@ public class Team : MonoBehaviour {
 		this.personnages.Clear ();
 	}
 
+	/// <summary>
+	/// Determines whether the specified <see cref="Team"/> is equal to the current <see cref="Team"/>.
+	/// </summary>
+	/// <param name="obj">The <see cref="Team"/> to compare with the current <see cref="Team"/>.</param>
+	/// <returns><c>true</c> if the specified <see cref="Team"/> is equal to the current <see cref="Team"/>; otherwise, <c>false</c>.</returns>
+	public bool Equals(Team obj)
+	{
+		if (this.personnages.Equals(obj.personnages) &&
+		    this.ecole.Equals(obj.Ecole))
+			return true;
+		return false;
+	}
+
 #endregion
 #region Team Getters
 
