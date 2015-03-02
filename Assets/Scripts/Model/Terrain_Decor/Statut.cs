@@ -76,7 +76,7 @@ namespace Statut_NS
 		/// <param name="obj">The <see cref="Statut_NS.Statut"/> to compare with the current <see cref="Statut_NS.Statut"/>.</param>
 		/// <returns><c>true</c> if the specified <see cref="Statut_NS.Statut"/> is equal to the current
 		/// <see cref="Statut_NS.Statut"/>; otherwise, <c>false</c>.</returns>
-		public bool Equals(Statut obj)
+		public override bool Equals(Statut obj)
 		{
 			if (this.Stat.Equals(obj.Stat))
 				return true;
