@@ -118,7 +118,7 @@ public class Decor : MonoBehaviour {
 	/// </summary>
 	/// <returns>The consommable.
 	/// <c>null</c> if the specified <see cref="Consommable"/> doesn't exist; otherwise, the object is returns.</returns>
-	public abstract Consommable getConsommable()
+	public virtual Consommable getConsommable()
 	{
 		return null;
 	}
