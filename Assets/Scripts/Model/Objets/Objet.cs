@@ -15,6 +15,9 @@ public abstract class Objet : MonoBehaviour {
 
 	protected int _prix;
 	public int Prix { get { return _prix; } }
+
+	protected float _tauxDrop;
+	public float TauxDrop { get { return _tauxDrop; } }
 	#endregion
 
 	/// <summary>
