@@ -124,4 +124,16 @@ public class Team : MonoBehaviour {
 		}
 	}
 #endregion
+
+	#region Team Methods
+
+	public override bool Equals (Team obj)
+	{
+		if (this.Ecole.Equals(obj.Ecole) &&
+		    this.Personnages.Equals(obj.Personnages))
+			return true;
+		return false;
+	}
+
+	#endregion
 }
