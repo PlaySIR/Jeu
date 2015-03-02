@@ -11,10 +11,10 @@ public class Monde : MonoBehaviour {
 	//Attributs
     private string _nom;
     private string _histoire;
-	private bool _estDisponible;
-	private bool _estFini;
+	private bool _estDisponible; //monde blockés ou visibles ?
+	private bool _estFini;		//monde fini ?
     private Mission[] _missions;
-	private int _encours;
+	private int _encours;		//numéro de la mission en cours, nécessaire ?
 
     private List<Personnage> personnagesDisponibles; //Alliés ou PNJ ?
     private List<Objet> objetsDisponibles; //dépend de la difficulté ou du prix
