@@ -94,7 +94,7 @@ public class Coordonnee : MonoBehaviour {
 	/// </summary>
 	/// <param name="obj">The <see cref="Coordonnee"/> to compare with the current <see cref="Coordonnee"/>.</param>
 	/// <returns><c>true</c> if the specified <see cref="Coordonnee"/> is equal to the current <see cref="Coordonnee"/>; otherwise, <c>false</c>.</returns>
-	public bool Equals(Coordonnee obj)
+	public override bool Equals(Coordonnee obj)
 	{
 		if (this.XMin.Equals(obj.XMin) &&
 		    this.YMin.Equals(obj.YMin) &&
