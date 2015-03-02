@@ -85,10 +85,13 @@ public class Mission : MonoBehaviour {
 			result.Add(FindLoot(temp));
 		}
 
+		//Partie à ajouter/modifier lorsque que la rareté d'un objet sera pris en compte (ou le drop)
+		/*
 		//On ajoute l'objet rare si nécessaire
 		if (rare) {
-			result.Add(Random(this._recompenses.rare));
-		}
+			nb = rnd.Next(this._recompenses.rare); 
+			result.Add(FindLoot(nb));
+		}*/
 	}
 
 
