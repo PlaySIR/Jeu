@@ -145,11 +145,11 @@ namespace Combat_NS
 			double coefAttaque = Statut_NS.StatutConstants.COEF_NEUT;
 			double coefDefense = Statut_NS.StatutConstants.COEF_NEUT;
 			
-			double marqueurStressA = 1 //this.Attaquant.MarqueurStress;
-			double marqueurConfA = 1 //this.Attaquant.MarqueurConf;
+			double marqueurStressA = 1; //this.Attaquant.MarqueurStress;
+			double marqueurConfA = 1; //this.Attaquant.MarqueurConf;
 			
-			double marqueurStressD = 1 //this.Defenseur.MarqueurStress;
-			double marqueurConfD = 1 //this.Defenseur.MarqueurConf;
+			double marqueurStressD = 1; //this.Defenseur.MarqueurStress;
+			double marqueurConfD = 1; //this.Defenseur.MarqueurConf;
 
 			//Si la case est une case de l'équipe de l'attaquant
 			if (this.zoneCombat.EquipeAppartenance.Equals(this.Attaquant.Team))
@@ -175,7 +175,8 @@ namespace Combat_NS
 			}
 
 			//Calcul de la puissance d'attaque
-			double attaque = (this.Attaquant.Force + sort.random(min,max)) * coefAttaque * marqueurConfA * marqueurStressA;
+			double attaque = (this.Attaquant.Force + sort.random(min,max)) 
+				* coefAttaque * marqueurConfA * marqueurStressA;
 			int coefAttCrit = this.NbTouchesCommunes - CombatConstants.NB_MAX_TOUCHES_COMMUNES;	//Compris entre 0 et -2
 			coefAttCrit = Math.Abs(coefAttCrit);//Calcul de la valeur absolue
 			double puissanceAttaque =  coefAttCrit * attaque;
@@ -190,7 +191,7 @@ namespace Combat_NS
 
 			//Diminution des PV du défenseur si il y a lieu
 			this.Defenseur.PV -= degats;
-		} 
+		}
 
 	#endregion
 }
