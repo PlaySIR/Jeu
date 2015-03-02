@@ -73,19 +73,42 @@ public class Mission : MonoBehaviour {
 	/// <param name="max">Maximum d'objets gagnés.</param>
 	/// <param name="rare">Si <c>vrai</c> donne un objet rare en plus.</param>
 	public List<Objet> GenerateurRecompenses (int min, int max, bool rare){
-		//Nb d'objets gagnés
-		int nb = Random (min, max);
-
+		Random rnd = new Random ();
 		List<Objet> result;
+
+		//Nb d'objets gagnés
+		int nb = rnd.Next(min, max);
+
 		//On ajoute de manière aléatoire les récompenses
 		for (int i; i<nb; i++) {
-			result.Add(Random(this._recompenses));
+			int temp = rnd.Next(this._recompenses.Count);
+			result.Add(FindLoot(temp));
 		}
 
 		//On ajoute l'objet rare si nécessaire
 		if (rare) {
 			result.Add(Random(this._recompenses.rare));
 		}
+	}
+
+
+	/// <summary>
+	/// Permet de trouver un objet dans une liste d'objets.
+	/// </summary>
+	/// <returns>The loot.</returns>
+	/// <param name="indice">Indice de l'objet à trouver dans la liste.</param>
+	/// <remarks>@prerequis : indice < list.count</remarks>
+	private Objet FindLoot (int indice){
+		int cpt = 0;
+		foreach (Objet courant in this._recompenses) {
+			if (cpt == indice){
+				return courant;
+			}
+			++cpt;
+		}
+
+		//Si le prérequis n'a pas été respecté
+		return null;
 	}
 
 
