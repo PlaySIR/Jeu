@@ -99,7 +99,7 @@ public class Cellule : MonoBehaviour {
 	/// </summary>
 	/// <param name="obj">The <see cref="Cellule"/> to compare with the current <see cref="Cellule"/>.</param>
 	/// <returns><c>true</c> if the specified <see cref="Cellule"/> is equal to the current <see cref="Cellule"/>; otherwise, <c>false</c>.</returns>
-	public bool Equals(Cellule obj)
+	public override bool Equals(Cellule obj)
 	{
 		if (this.Statut.Equals(obj.Statut) &&
 		    this.Coordonnee.Equals(obj.Coordonnee) &&
