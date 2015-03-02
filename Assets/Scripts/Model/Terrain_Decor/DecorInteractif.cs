@@ -8,6 +8,7 @@ public class DecorInteractif : Decor {
 	/// <summary>
 	/// Initializes a new instance of the <see cref="DecorInteractif"/> class.
 	/// </summary>
+	/// <remarks>Appel du constructeur par défaut de Decor</remarks>
 	/// <param name="consoT">Conso t.</param>
 	public DecorInteractif(Consommable consoT)
 		: base()
@@ -32,6 +33,7 @@ public class DecorInteractif : Decor {
 	/// <summary>
 	/// Initializes a new instance of the <see cref="DecorInteractif"/> class.
 	/// </summary>
+	/// <remarks>Appel du constructeur a 1 paramètre de Decor</remarks>
 	/// <param name="estFranchissableT">If set to <c>true</c> est franchissable t.</param>
 	/// <param name="consoT">Conso t.</param>
 	public DecorInteractif(bool estFranchissableT, Consommable consoT)

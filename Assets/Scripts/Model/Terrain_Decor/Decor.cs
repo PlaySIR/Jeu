@@ -37,6 +37,7 @@ public class Decor : MonoBehaviour {
 	/// <summary>
 	/// Initializes a new instance of the <see cref="Decor"/> class.
 	/// </summary>
+	/// <remarks>Nom initialisé à NoName et description à NoDescription</remarks>
 	/// <param name="estFranchissableT">If set to <c>true</c> est franchissable t.</param>
 	public Decor (bool estFranchissableT)
 		: base()
