@@ -73,7 +73,7 @@ namespace Combat_NS
 		}
 
 
-		#region Statut Getters
+		#region Combat Getters
 
 		/// <summary>
 		/// Gets the attaquant.
@@ -118,7 +118,7 @@ namespace Combat_NS
 
 		#endregion
 		
-		#region Statut Methods
+		#region Combat Methods
 		
 		/// <summary>
 		/// Determines whether the specified <see cref="Combat_NS.Combat"/> is equal to the current <see cref="Combat_NS.Combat"/>.
@@ -192,7 +192,6 @@ namespace Combat_NS
 			//Diminution des PV du défenseur si il y a lieu
 			this.Defenseur.PV -= degats;
 		}
-
 	#endregion
 }
 }
