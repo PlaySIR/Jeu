@@ -75,9 +75,9 @@ public class Mission : MonoBehaviour {
 	/// <param name="max">Maximum d'objets gagnés.</param>
 	/// <param name="rare">Si <c>vrai</c> donne un objet rare en plus.</param>
 	public List<Objet> GenerateurRecompenses (int min, int max, bool rare){
-		List<Objet> objets;
-		List<Objet> objRare;
-		List<Objet> result;
+		List<Objet> objets = new List<Objet>();
+		List<Objet> objRare = new List<Objet>();
+		List<Objet> result = new List<Objet>();
 
 		//On parcourt la liste pour savoir quels sont les objets lootés
 		foreach (Objet courant in this._recompenses) {
