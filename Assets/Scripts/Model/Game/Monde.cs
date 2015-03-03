@@ -34,7 +34,7 @@ public class Monde : MonoBehaviour {
 	/// <param name="missions">Missions à effectuer sur le monde.</param>
 	/// <param name="fini">Vaut <c>true<c/> si toutes les missions ont été effectuées</param>
 	/// <remarks>1er constructeur : pas d'école sur le monde</remarks>
-	public Monde (string nom, string histoire, Mission[] missions, bool fini){
+	public Monde (string nom, string histoire, Mission[] missions, bool fini, bool disponible){
 		this._nom = nom;
 		this._histoire = histoire;
 		this._missions = missions;
@@ -45,7 +45,7 @@ public class Monde : MonoBehaviour {
 		this._encours = 0;
 		//Opération pour savoir si le monde est disponible ou non
 
-
+		this._estDisponible=disponible; 	//Rajout de ma part (billel)
 		//TODO
 		//INCOMPATIBLE
 		//		this._estDisponible = Statistiques.MondeDisponible(this);	
