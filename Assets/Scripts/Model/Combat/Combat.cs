@@ -177,10 +177,11 @@ namespace Combat_NS
 			}
 
 			//Calcul de la puissance d'attaque
-			double attaque = (this.Attaquant.Caracteristiques.Force + this.Attaquant.Attaques[0].AttaqueEffets())
-				* coefAttaque * marqueurConfA * marqueurStressA;
-			uint coefAttCrit = this.NbTouchesCommunes - CombatConstants.NB_MAX_TOUCHES_COMMUNES;	//Compris entre 0 et -2
-			coefAttCrit = (uint)Math.Abs(coefAttCrit);//Calcul de la valeur absolue
+			double attaque = (double) ((this.Attaquant.Caracteristiques.Force + 
+			                           this.Attaquant.Attaques[0].AttaqueEffets(0))
+				* coefAttaque * marqueurConfA * marqueurStressA);
+			int coefAttCrit = this.NbTouchesCommunes - CombatConstants.NB_MAX_TOUCHES_COMMUNES;	//Compris entre 0 et -2
+			coefAttCrit = (int)Math.Abs(coefAttCrit);//Calcul de la valeur absolue
 			double puissanceAttaque =  coefAttCrit * attaque;
 
 			//Calcul de la défense
@@ -193,7 +194,10 @@ namespace Combat_NS
 				degats = 0;
 
 			//Diminution des PV du défenseur si il y a lieu
-			this.Defenseur.Caracteristiques.Vitalite -= degats;
+			if (this.Defenseur.Caracteristiques.Vitalite - degats < 0)
+				this.Defenseur.Caracteristiques.Vitalite = 0;
+			else
+				this.Defenseur.Caracteristiques.Vitalite -= degats;
 		}
 	#endregion
 }

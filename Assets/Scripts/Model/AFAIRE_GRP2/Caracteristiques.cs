@@ -44,15 +44,17 @@ public class Caracteristiques : MonoBehaviour {
 		this._initiative=initiative;
 		this._pointMouvement=force;
 	}
-	
-	/// <summary>
-	/// Gets the vitalite.
-	/// </summary>
-	/// <returns>The vitalite.</returns>
-	public uint Vitalite{
 
-		get{
-			return this._vitalite;
+	/// <summary>
+	/// Gets or sets the _vitalite.
+	/// </summary>
+	/// <value>The _vitalite.</value>
+	public uint Vitalite {
+		get {
+			return _vitalite;
+		}
+		set {
+			_vitalite = value;
 		}
 	}
 	
