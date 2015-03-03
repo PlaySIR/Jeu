@@ -1,24 +1,27 @@
-﻿using UnityEngine;
+﻿﻿using UnityEngine;
 using System.Collections;
 
+
+/// <summary>
+/// @Autohor : Anne-Claire
+/// </summary>
 public class Consommable : Objet {
-
-    Attaque attaque;
-
-
-
-
-
-
-
-
-	// Use this for initialization
-	void Start () {
 	
-	}
+	//Attribut supplémentaire de l'héritage
+	private Attaque _attaque;
+	public Attaque Attaque { get { return this._attaque; } }
 	
-	// Update is called once per frame
-	void Update () {
 	
+	/// <summary>
+	/// Initializes a new instance of the <see cref="Consommable"/> class.
+	/// </summary>
+	/// <param name="attaque">Attaque.</param>
+	/// <param name="nom">Nom.</param>
+	/// <param name="description">Description.</param>
+	/// <param name="prix">Prix.</param>
+	public Consommable (Attaque attaque, string nom, string description, int prix, float drop)
+		: base(nom, description, prix, drop)
+	{
+		this._attaque = attaque;
 	}
 }

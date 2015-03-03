@@ -14,7 +14,7 @@ public class Arme : Equipement {
 	/// </summary>
 	/// <param name="attack">Attack.</param>
 	public Arme (Attaque attack, Caracteristiques caracteristiques, string nom, 
-	             string description, int prix):base(caracteristiques, nom, description,prix){
+	             string description, int prix, float tauxDrop):base(caracteristiques, nom, description,prix,tauxDrop){
 
 		this._attaque = attack;
 	}

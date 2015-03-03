@@ -24,7 +24,7 @@ public class Equipement : Objet {
 	/// <param name="nom">Nom.</param>
 	/// <param name="description">Description.</param>
 	public Equipement(Caracteristiques caracteristiques, string nom, 
-	                  string description, int prix):base(nom,description,prix){
+	                  string description, int prix, float tauxDrop ):base(nom,description,prix,tauxDrop){
 		
 		this._caracteristiques = caracteristiques;
 	}

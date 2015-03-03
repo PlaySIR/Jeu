@@ -76,7 +76,4 @@ public class Enchantement : Effets {
 		return new Buff(this,Latence,Duree);
    }
 
-
-	
-
 }
