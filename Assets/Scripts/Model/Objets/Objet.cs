@@ -27,9 +27,10 @@ public abstract class Objet : MonoBehaviour {
 	/// <param name="nom">Nom.</param>
 	/// <param name="description">Description.</param>
 	/// <param name="prix">Prix.</param>
-	public Objet (string nom, string description, int prix){
+	public Objet (string nom, string description, int prix, float tauxDrop){
 		this._nom = nom;
 		this._description = description;
 		this._prix = prix;
+		this._tauxDrop = tauxDrop;
 	}
 }
