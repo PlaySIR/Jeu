@@ -96,7 +96,7 @@ public class Team : MonoBehaviour {
 	/// <returns>The enumerateur.</returns>
 	public Dictionary<string, Personnage>.Enumerator getEnumerateur()
 	{
-		return this.personnages.GetEnumerator;
+		return this._personnages.GetEnumerator();
 	}
 
 	/// <summary>

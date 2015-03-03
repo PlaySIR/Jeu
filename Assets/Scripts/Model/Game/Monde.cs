@@ -42,7 +42,18 @@ public class Monde : MonoBehaviour {
 		this._ecole = null;
 
 		//Opération pour savoir si le monde est disponible ou non
-		this._estDisponible = Statistiques.MondeDisponible(this);
+
+
+		//TODO
+		//INCOMPATIBLE
+		//		this._estDisponible = Statistiques.MondeDisponible(this);	
+
+
+
+
+
+
+
 
 		//On initialise à la 1ère mission
 		this._encours = 0;
@@ -65,8 +76,22 @@ public class Monde : MonoBehaviour {
 		this._ecole = ecole;
 		
 		//Opération pour savoir si le monde est disponible ou non
-		this._estDisponible = Statistiques.MondeDisponible(this);
-		
+
+
+
+
+
+		//TODO
+		//INSTRUCTION INCOMPATIBLE 
+		//this._estDisponible = Statistiques.MondeDisponible(this);
+
+
+
+
+
+
+
+
 		//On initialise à la 1ère mission
 		this._encours = 0;
 	} 
@@ -145,7 +170,17 @@ public class Monde : MonoBehaviour {
 		//Si toutes les missions sont finies on appelle la fonction "monde terminé" de stats
 		if (fini) {
 			this._estFini = true;
-			Statistiques.MondeTermine(this);
+
+
+			//TODO
+			//INCOMPATIBLE 
+			//Statistiques.MondeTermine(this);
+
+
+
+
+
+
 		}
 
 		return butin;

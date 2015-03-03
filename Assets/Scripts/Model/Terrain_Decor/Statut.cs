@@ -34,7 +34,7 @@ namespace Statut_NS
 		/// <summary>
 		/// The statut.
 		/// </summary>
-	    private uint stat;
+	    private uint _stat;
 	    
 		/// <summary>
 		/// Initializes a new instance of the <see cref="Statut.Statut"/> class.
@@ -43,7 +43,7 @@ namespace Statut_NS
 		public Statut(uint statutT)
 			: base()
 		{
-			this.stat = statutT;
+			this._stat = statutT;
 		}
 
 		/// <summary>
@@ -52,7 +52,7 @@ namespace Statut_NS
 		public Statut()
 			: base()
 		{
-			this(StatutConstants.NEUTRE);
+			this._stat=StatutConstants.NEUTRE;
 		}
 
 		#region Statut Getters
@@ -62,7 +62,7 @@ namespace Statut_NS
 		/// <value>The statut.</value>
 		public uint Stat {
 			get {
-				return stat;
+				return _stat;
 			}
 		}
 
