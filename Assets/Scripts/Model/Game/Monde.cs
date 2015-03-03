@@ -72,15 +72,60 @@ public class Monde : MonoBehaviour {
 	} 
 
 
-	//Getters
+	//-------------------------Getters
+
+
+	/// <summary>
+	/// Gets the nom.
+	/// </summary>
+	/// <value>The nom.</value>
 	public string Nom { get { return this._nom;} }
+
+	/// <summary>
+	/// Gets the histoire.
+	/// </summary>
+	/// <value>The histoire.</value>
 	public string Histoire { get { return this._histoire; } }
+
+	/// <summary>
+	/// Gets the missions.
+	/// </summary>
+	/// <value>The missions.</value>
 	public Mission[] Missions { get { return this._missions; } }
+
+	/// <summary>
+	/// Gets a value indicating whether this <see cref="Monde"/> is disponible.
+	/// </summary>
+	/// <value><c>true</c> if disponible; otherwise, <c>false</c>.</value>
 	public bool Disponible { get { return this._estDisponible; } }
+
+	/// <summary>
+	/// Gets a value indicating whether this <see cref="Monde"/> is fini.
+	/// </summary>
+	/// <value><c>true</c> if fini; otherwise, <c>false</c>.</value>
 	public bool Fini { get { return this._estFini; } }
+
+	/// <summary>
+	/// Gets the en cours.
+	/// </summary>
+	/// <value>The en cours.</value>
 	public int EnCours{ get { return this._encours; } }
 
+	/// <summary>
+	/// Gets the ecole.
+	/// </summary>
+	/// <value>The ecole.</value>
+	public Ecole Ecole{
+		get{
+			return this._ecole;
+		}
+	}
 
+	/// <summary>
+	/// Missions the finie.
+	/// </summary>
+	/// <returns>The finie.</returns>
+	/// <param name="terminee">Terminee.</param>
 	public List<Objet> MissionFinie (Mission terminee){
 		//On incrémente la mission en cours
 		this._encours++;
