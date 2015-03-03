@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 ///<summary>
-///@Author : Anne-Claire
+///@Author : Anne-Claire /Modification Billel Setter 
 ///</summary>
 public class Ecole : MonoBehaviour {
 
@@ -31,7 +31,15 @@ public class Ecole : MonoBehaviour {
 
 	public string Nom { get { return this._nom; } }
 	public string Description { get { return this._description; } }
-	public List<Magasin> Magasins { get { return this._magasins; } set { this._magasins.Add(value); } }
+	public List<Magasin> Magasins { get { return this._magasins; }  }
+
+	/// <summary>
+	/// Adds the magasin.
+	/// </summary>
+	/// <param name="value">Value.</param>
+	void addMagasin(Magasin value){ 
+		this._magasins.Add(value);
+	}
 
 
 
