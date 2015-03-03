@@ -10,7 +10,7 @@ public class Inventaire : MonoBehaviour {
 	#region Attributs
 	static public class InventaireConstants
 	{
-		public readonly int INFINI = -1;
+		public const int INFINI = -1;
 	}
 
 	private IDictionary<string, Stock> _objets;
