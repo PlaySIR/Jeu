@@ -86,7 +86,7 @@ public class Monde : MonoBehaviour {
 		this._encours++;
 
 		//On génère les récompenses
-		List<Objet> butin = Mission.GenerateurRecompenses (3, 5, true);
+		List<Objet> butin = terminee.GenerateurRecompenses (3, 5, true);
 
 		//On vérifie si toutes les missions sont réalisées
 		bool fini = true;
