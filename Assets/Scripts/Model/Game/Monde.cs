@@ -78,7 +78,7 @@ public class Monde : MonoBehaviour {
 	public Mission[] Missions { get { return this._missions; } }
 	public bool Disponible { get { return this._estDisponible; } }
 	public bool Fini { get { return this._estFini; } }
-	public bool EnCours{ get { return this._encours; } }
+	public int EnCours{ get { return this._encours; } }
 
 
 	public List<Objet> MissionFinie (Mission terminee){

@@ -47,7 +47,7 @@ public class Inventaire : MonoBehaviour {
 			return false;
 
 		Stock stock;
-		if (_objets.TryGetValue(objet.Nom, stock))
+		if (_objets.TryGetValue(objet.Nom, out stock))	//TODO RAJOUT MOTS CLEF OUT DEMANDER PAR COMPILATEUR : BILLEL
 			stock.ajouterQuantite(quantite);
 		else 
 			_objets.Add(objet.Nom, new Stock(objet, quantite));
@@ -64,7 +64,7 @@ public class Inventaire : MonoBehaviour {
 	public bool retirer(Objet objet, int quantite)
 	{
 		Stock stock;
-		if (! _objets.TryGetValue(objet.Nom, stock))
+		if (! _objets.TryGetValue(objet.Nom, out stock)) //TODO RAJOUT MOTS CLEF OUT DEMANDER PAR COMPILATEUR : BILLEL
 		    return false;
 
 		if (stock.Quantite - quantite < 0)
