@@ -29,7 +29,7 @@ namespace Combat_NS
 		/// <summary>
 		/// The Nb Max TOUCHE COMMUNE.
 		/// </summary>
-		public const uint NB_MAX_TOUCHES_COMMUNES = 2;
+		public const int NB_MAX_TOUCHES_COMMUNES = 2;
 	}
 
 	/// <summary>
@@ -53,7 +53,7 @@ namespace Combat_NS
 		/// <summary>
 		/// The nb touches communes.
 		/// </summary>
-		private uint nbTouchesCommunes;
+		private int nbTouchesCommunes;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="Combat"/> class.
@@ -63,7 +63,7 @@ namespace Combat_NS
 		/// <param name="zoneCombatT">Zone combat t.</param>
 		/// <param name="nbTouchesCommunes">Nb touches communes.</param>
 		public Combat(Personnage attaquantT, Personnage defenseurT,
-		              Cellule zoneCombatT, uint nbTouchesCommunesT)
+		              Cellule zoneCombatT, int nbTouchesCommunesT)
 			: base()
 		{
 			this.attaquant = attaquantT;
@@ -109,7 +109,7 @@ namespace Combat_NS
 		/// Gets the nb touches communes.
 		/// </summary>
 		/// <value>The nb touches communes.</value>
-		public uint NbTouchesCommunes {
+		public int NbTouchesCommunes {
 			get {
 				return nbTouchesCommunes;
 			}
