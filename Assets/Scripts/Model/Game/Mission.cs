@@ -75,41 +75,56 @@ public class Mission : MonoBehaviour {
 	/// <param name="max">Maximum d'objets gagnés.</param>
 	/// <param name="rare">Si <c>vrai</c> donne un objet rare en plus.</param>
 	public List<Objet> GenerateurRecompenses (int min, int max, bool rare){
+		List<Objet> objets;
+		List<Objet> objRare;
 		List<Objet> result;
+
 		//On parcourt la liste pour savoir quels sont les objets lootés
 		foreach (Objet courant in this._recompenses) {
+			//On ajoute un objet de manière aléatoire
 			if (Random.Range(0,1) <= courant.TauxDrop){
-				result.Add(courant);
+				objets.Add(courant);
+			}
+			//On ajoute un objet rare (taux de drop à 10% ou moins) dans une liste à part
+			if (rare && courant.TauxDrop <= 0.1){
+				objRare.Add(courant);
 			}
 		}
 
-		//On ajoute l'objet rare si nécessaire
-		if (rare) {
-			//Objet rare = taux de drop de 10% ou moins
-			result.Add(FindLoot(0,1));
+		//On ajoute un nombre de récompenses compris entre min et max
+		int nb = Random.Range (min, max);
+		for (int i=0; i<nb; i++) {
+			//On cherche un objet aléatoire dans la liste objets pour l'ajouter au résultat
+			int temp = Random.Range(0, objets.Count);
+			result.Add(FindLoot(temp));
 		}
+
+		//On ajoute l'objet rare à la liste résultat
+		if (rare) {
+			result.Add(FindLoot(Random.Range(0, objRare.Count)));
+		}
+
+		return result;
 	}
 
 
 	/// <summary>
-	/// Permet de trouver un objet <= à un taux de drop.
+	/// Permet de chercher un objet à un indice i.
 	/// </summary>
 	/// <returns>The loot.</returns>
-	/// <param name="drop">Taux de drop.</param>
-	/// <remarks>@prerequis : objet < drop</remarks>
-	private Objet FindLoot (float drop){
-		List<Objet> result;
-
-		//On cherche un objet dans la liste qui possède son taux_drop <= drop 
+	/// <param name="indice">L'indice de l'objet à trouver.</param>
+	/// <remarks>@prerequis : indice < list.count</remarks>
+	private Objet FindLoot (int indice){
+		int cpt = 0;
 		foreach (Objet courant in this._recompenses) {
-			if (courant.TauxDrop <= drop){
-				result.Add(courant);
+			//Si l'objet recherché correspond à l'objet courant
+			if (indice.Equals(cpt)){
+				return courant;
 			}
+			++cpt;
 		}
-
-		int indice = Random.Range(0, result.Count);
-
-		//A retrouner : l'objet correspondant à l'indice dans la liste result
+		//Si le prérequis n'a pas été respecté
+		return null;
 	}
 
 
