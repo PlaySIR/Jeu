@@ -1,14 +1,15 @@
-﻿﻿using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 /// <summary>
 /// @Author: Steven Pescheteau
 /// </summary>
 public abstract class Objet : MonoBehaviour {
-	
+
 	#region Attributs
 	protected string _nom;
 	public string Nom { get { return _nom; } }
+<<<<<<< HEAD
 	
 	protected string _description;
 	public string Description { get { return _description; } }
@@ -21,6 +22,20 @@ public abstract class Objet : MonoBehaviour {
 	#endregion
 	
 	
+=======
+
+    protected string _description;
+	public string Description { get { return _description; } }
+
+	protected int _prix;
+	public int Prix { get { return _prix; } }
+
+	protected float _tauxDrop;
+	public float TauxDrop { get { return _tauxDrop; } }
+	#endregion
+
+
+>>>>>>> 80e9539b6b76b5280ba4af06c499831bf96c0811
 	/// <summary>
 	/// Initializes a new instance of the <see cref="Objet"/> class.
 	/// </summary>
