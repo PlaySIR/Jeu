@@ -37,7 +37,7 @@ public class Team : MonoBehaviour {
 	{
 		//Ajout seulement si le personnage est de la meme école/camp que nous
 		if (p.getEcole () == this.ecole)
-			this.personnages.Add(p.nom, p);
+			this.personnages.Add(p.Nom, p);	//Billel : ajout de Nom au lieu de nom 
 	}
 
 	/// <summary>
@@ -49,7 +49,7 @@ public class Team : MonoBehaviour {
 	{
 		//True si la clé existe, false sinon
 		//Suppression sécurisé
-		return this.personnages.Remove(p.nom);
+		return this.personnages.Remove(p.Nom);//Billel : ajout de Nom au lieu de nom 
 	}
 
 	/// <summary>
