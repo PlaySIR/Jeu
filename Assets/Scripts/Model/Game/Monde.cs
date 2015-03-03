@@ -40,7 +40,9 @@ public class Monde : MonoBehaviour {
 		this._missions = missions;
 		this._estFini = fini;
 		this._ecole = null;
-
+		
+		//On initialise à la 1ère mission
+		this._encours = 0;
 		//Opération pour savoir si le monde est disponible ou non
 
 
@@ -51,12 +53,6 @@ public class Monde : MonoBehaviour {
 
 
 
-
-
-
-
-		//On initialise à la 1ère mission
-		this._encours = 0;
 	}
 
 

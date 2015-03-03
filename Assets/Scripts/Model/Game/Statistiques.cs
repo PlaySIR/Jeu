@@ -12,6 +12,32 @@ public class Statistiques : MonoBehaviour {
 	private List<Monde> _mondes_blockes;
 	private Monde _encours;
 
+
+
+	/// <summary>
+	/// Initializes a new instance of the <see cref="Statistiques"/> class.
+	/// </summary>
+	/// <param name="deblockes">Deblockes.</param>
+	/// <param name="blockes">Blockes.</param>
+	/// <param name="encours">Encours.</param>
+	public Statistiques(List<Monde> deblockes, List<Monde> blockes, Monde encours){
+		this._mondes_deblockes=deblockes;
+		this._mondes_blockes=blockes;
+		this._encours=encours;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 	// + Niveau de difficulté ?
 
 	/// <summary>
