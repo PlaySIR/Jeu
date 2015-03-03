@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Combat_NS;
+using System.Object;
 
 
 ///<summary>
@@ -50,7 +51,7 @@ public class Mission : MonoBehaviour {
 		++this._actuel;
 		bool fini = true;
 		for (int i=0; i<this.Combats.Length; ++i) {
-			if(i == this._actuel){
+			if(this._actuel.Equals(i)){
 				fini=false;
 				break;
 			}
@@ -74,45 +75,41 @@ public class Mission : MonoBehaviour {
 	/// <param name="max">Maximum d'objets gagnés.</param>
 	/// <param name="rare">Si <c>vrai</c> donne un objet rare en plus.</param>
 	public List<Objet> GenerateurRecompenses (int min, int max, bool rare){
-		Random rnd = new Random ();
 		List<Objet> result;
-
-		//Nb d'objets gagnés
-		int nb = rnd.Next(min, max);
-
-		//On ajoute de manière aléatoire les récompenses
-		for (int i; i<nb; i++) {
-			int temp = rnd.Next(this._recompenses.Count);
-			result.Add(FindLoot(temp));
+		//On parcourt la liste pour savoir quels sont les objets lootés
+		foreach (Objet courant in this._recompenses) {
+			if (Random.Range(0,1) <= courant.TauxDrop){
+				result.Add(courant);
+			}
 		}
 
-		//Partie à ajouter/modifier lorsque que la rareté d'un objet sera pris en compte (ou le drop)
-		/*
 		//On ajoute l'objet rare si nécessaire
 		if (rare) {
-			nb = rnd.Next(this._recompenses.rare); 
-			result.Add(FindLoot(nb));
-		}*/
+			//Objet rare = taux de drop de 10% ou moins
+			result.Add(FindLoot(0,1));
+		}
 	}
 
 
 	/// <summary>
-	/// Permet de trouver un objet dans une liste d'objets.
+	/// Permet de trouver un objet <= à un taux de drop.
 	/// </summary>
 	/// <returns>The loot.</returns>
-	/// <param name="indice">Indice de l'objet à trouver dans la liste.</param>
-	/// <remarks>@prerequis : indice < list.count</remarks>
-	private Objet FindLoot (int indice){
-		int cpt = 0;
+	/// <param name="drop">Taux de drop.</param>
+	/// <remarks>@prerequis : objet < drop</remarks>
+	private Objet FindLoot (float drop){
+		List<Objet> result;
+
+		//On cherche un objet dans la liste qui possède son taux_drop <= drop 
 		foreach (Objet courant in this._recompenses) {
-			if (cpt == indice){
-				return courant;
+			if (courant.TauxDrop <= drop){
+				result.Add(courant);
 			}
-			++cpt;
 		}
 
-		//Si le prérequis n'a pas été respecté
-		return null;
+		int indice = Random.Range(0, result.Count);
+
+		//A retrouner : l'objet correspondant à l'indice dans la liste result
 	}
 
 

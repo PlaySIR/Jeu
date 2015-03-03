@@ -64,7 +64,7 @@ public class Statistiques : MonoBehaviour {
 	}
 
 
-	public void MondeTerminee (Monde fini){
+	public void MondeTermine (Monde fini){
 		this._encours = this._mondes_blockes; //récupère le 1er élement ? j'espère...
 		this.Deblocke (this._encours);
 	}

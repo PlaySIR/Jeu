@@ -15,12 +15,11 @@ public class Monde : MonoBehaviour {
 	private bool _estFini;		//monde fini ?
     private Mission[] _missions;
 	private int _encours;		//numéro de la mission en cours, nécessaire ?
+	private Ecole _ecole;
 
-    private List<Personnage> personnagesDisponibles; //Alliés ou PNJ ?
+   // private List<Personnage> personnagesDisponibles; //Alliés ou PNJ ?
     private List<Objet> objetsDisponibles; //dépend de la difficulté ou du prix
-    private List<Ecole> ecoles; //2 constructeurs
-
-	//Liste d'écoles ? Ou une seule école ?
+    
 
 	//Création d'une map constante (classe à part) contenant TOUS les objets qui existent (BDD ?) ainsi qu'un niveau de difficulté
 	//L'idée serait qu'un monde soit associé a un niveau de difficulté : donne accès aux objets uniquement du meme niveau
@@ -34,11 +33,13 @@ public class Monde : MonoBehaviour {
 	/// <param name="histoire">Histoire du monde.</param>
 	/// <param name="missions">Missions à effectuer sur le monde.</param>
 	/// <param name="fini">Vaut <c>true<c/> si toutes les missions ont été effectuées</param>
+	/// <remarks>1er constructeur : pas d'école sur le monde</remarks>
 	public Monde (string nom, string histoire, Mission[] missions, bool fini){
 		this._nom = nom;
 		this._histoire = histoire;
 		this._missions = missions;
 		this._estFini = fini;
+		this._ecole = null;
 
 		//Opération pour savoir si le monde est disponible ou non
 		this._estDisponible = Statistiques.MondeDisponible(this);
@@ -46,6 +47,29 @@ public class Monde : MonoBehaviour {
 		//On initialise à la 1ère mission
 		this._encours = 0;
 	}
+
+
+	/// <summary>
+	/// Initializes a new instance of the <see cref="Monde"/> class.
+	/// </summary>
+	/// <param name="nom">Nom du monde.</param>
+	/// <param name="histoire">Histoire du monde.</param>
+	/// <param name="missions">Missions à effectuer sur le monde.</param>
+	/// <param name="fini">Vaut <c>true<c/> si toutes les missions ont été effectuées</param>
+	/// <param name="ecole">Ecole présente sur le monde</param> 
+	public Monde (string nom, string histoire, Mission[] missions, bool fini, Ecole ecole){
+		this._nom = nom;
+		this._histoire = histoire;
+		this._missions = missions;
+		this._estFini = fini;
+		this._ecole = ecole;
+		
+		//Opération pour savoir si le monde est disponible ou non
+		this._estDisponible = Statistiques.MondeDisponible(this);
+		
+		//On initialise à la 1ère mission
+		this._encours = 0;
+	} 
 
 
 	//Getters
