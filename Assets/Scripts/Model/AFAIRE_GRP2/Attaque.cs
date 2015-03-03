@@ -128,7 +128,13 @@ public class Attaque : MonoBehaviour {
 	}
 
 
-
+	/// <summary>
+	/// Value of the attack through the effect.
+	/// </summary>
+	/// <returns>The attaque.</returns>
+	public uint AttaqueEffets(int i){
+		return (uint)Random.Range(Effets[i].EffetMin,Effets[i].EffetMax);
+	}
 
 
 

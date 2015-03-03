@@ -49,12 +49,6 @@ public class Effets : MonoBehaviour {
 		}
 	}
 
-	/// <summary>
-	/// Value of the attack through the effect.
-	/// </summary>
-	/// <returns>The attaque.</returns>
-	public int AttaqueEffets(){
-		return (int)Random.Range(EffetMin,EffetMax);
-	}
+
 
 }

@@ -175,7 +175,7 @@ namespace Combat_NS
 			}
 
 			//Calcul de la puissance d'attaque
-			double attaque = (this.Attaquant.Force + sort.random(min,max)) 
+			double attaque = (this.Attaquant.Caracteristiques.Force + this.Attaquant.Attaques[0].AttaqueEffets) 
 				* coefAttaque * marqueurConfA * marqueurStressA;
 			uint coefAttCrit = this.NbTouchesCommunes - CombatConstants.NB_MAX_TOUCHES_COMMUNES;	//Compris entre 0 et -2
 			coefAttCrit = (uint)Math.Abs(coefAttCrit);//Calcul de la valeur absolue
