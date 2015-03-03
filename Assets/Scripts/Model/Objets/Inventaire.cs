@@ -18,17 +18,22 @@ public class Inventaire : MonoBehaviour {
 	#endregion
 
 	/// <summary>
-	/// Inventaire contenant des objets de diverses quantités.
+	/// Inventaire contenant des objets de diverses quantités, de capacité limitée.
 	/// </summary>
-	/// <param name="capaciteMax">Capacité max. Par défaut, capacité infini.</param>
-	public Inventaire(int capaciteMax = InventaireConstants.INFINI)
+	/// <param name="capaciteMax">Capacité max.</param>
+	public Inventaire(int capaciteMax)
 	{
 		_capaciteMax = capaciteMax;
+		_objets = new Dictionary<string, Stock> (_capaciteMax);
+	}
 
-		if (_capaciteMax == InventaireConstants.INFINI)
-			_objets = new Dictionary<string, Stock> ();
-		else
-			_objets = new Dictionary<string, Stock> (_capaciteMax);
+	/// <summary>
+	/// Inventaire contenant des objets de diverses quantités, de capacité infini.
+	/// </summary>
+	public Inventaire()
+	{
+		_capaciteMax = InventaireConstants.INFINI;
+		_objets = new Dictionary<string, Stock> ();
 	}
 
 	/// <summary>
@@ -36,7 +41,7 @@ public class Inventaire : MonoBehaviour {
 	/// </summary>
 	/// <param name="objet">Objet.</param>
 	/// <param name="quantite">Quantite. 1 par défaut.</param>
-	public bool ajouter(Objet objet, int quantite = 1)
+	public bool ajouter(Objet objet, int quantite)
 	{
 		if (_capaciteMax == _objets.Count )
 			return false;
@@ -56,7 +61,7 @@ public class Inventaire : MonoBehaviour {
 	/// </summary>
 	/// <param name="objet">Objet.</param>
 	/// <param name="quantite">Quantite. 1 par défaut.</param>
-	public bool retirer(Objet objet, int quantite = 1)
+	public bool retirer(Objet objet, int quantite)
 	{
 		Stock stock;
 		if (! _objets.TryGetValue(objet.Nom, stock))
@@ -87,7 +92,7 @@ public class Inventaire : MonoBehaviour {
 		/// </summary>
 		/// <param name="objet">Objet.</param>
 		/// <param name="quantite">Quantite. 1 par défaut.</param>
-		public Stock(Objet objet, int quantite = 1)
+		public Stock(Objet objet, int quantite)
 		{
 			this._objet = objet;
 			this._quantite = quantite;
@@ -97,7 +102,7 @@ public class Inventaire : MonoBehaviour {
 		/// Ajoute la quantité du stock à celle actuelle
 		/// </summary>
 		/// <param name="quantite">Quantite. 1 par défaut.</param>
-		public void ajouterQuantite(int quantite = 1)
+		public void ajouterQuantite(int quantite)
 		{
 			_quantite += quantite;
 		}
@@ -107,7 +112,7 @@ public class Inventaire : MonoBehaviour {
 		/// </summary>
 		/// <returns><c>true</c>, if quantite was retirered, <c>false</c> otherwise.</returns>
 		/// <param name="quantite">Quantite. 1 par défaut.</param>
-		public bool retirerQuantite(int quantite = 1)
+		public bool retirerQuantite(int quantite)
 		{
 			if (_quantite - quantite < 0)
 				return false;
