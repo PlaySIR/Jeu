@@ -152,7 +152,8 @@ namespace Combat_NS
 			double marqueurConfD = 1; //this.Defenseur.MarqueurConf;
 
 			//Si la case est une case de l'équipe de l'attaquant
-			if (this.zoneCombat.EquipeAppartenance.Equals(this.Attaquant.Team))
+			if (this.zoneCombat.
+			    EquipeAppartenance.Ecole.Equals(this.Attaquant.Ecole))
 			{
 				//Si la case est une case offensive (la seule utile pour un attaquant)
 				//On modifie le coefficient d'attaque
@@ -163,7 +164,8 @@ namespace Combat_NS
 				}
 			}
 			//Sinon si la case est une case de l'équipe du défenseur
-			else if (this.zoneCombat.EquipeAppartenance.Equals(this.Defenseur.Team))
+			else if (this.zoneCombat.
+			         EquipeAppartenance.Ecole.Equals(this.Defenseur.Ecole))
 			{
 					//Si la case est une case defensive (la seule utile pour un defenseur)
 					//On modifie le coefficient de défense
@@ -175,14 +177,15 @@ namespace Combat_NS
 			}
 
 			//Calcul de la puissance d'attaque
-			double attaque = (this.Attaquant.Force + sort.random(min,max)) 
+			double attaque = (this.Attaquant.Caracteristiques.Force + sort.random(min,max)) 
 				* coefAttaque * marqueurConfA * marqueurStressA;
 			int coefAttCrit = this.NbTouchesCommunes - CombatConstants.NB_MAX_TOUCHES_COMMUNES;	//Compris entre 0 et -2
 			coefAttCrit = Math.Abs(coefAttCrit);//Calcul de la valeur absolue
 			double puissanceAttaque =  coefAttCrit * attaque;
 
 			//Calcul de la défense
-			double defense = (this.Defenseur.deff) * coefDefense * marqueurConfD * marqueurStressD;
+			double defense = (this.Defenseur.Caracteristiques.Defense)
+				* coefDefense * marqueurConfD * marqueurStressD;
 
 			//Calcul des dégats effectifs
 			double degats = puissanceAttaque - defense;
@@ -190,7 +193,7 @@ namespace Combat_NS
 				degats = 0;
 
 			//Diminution des PV du défenseur si il y a lieu
-			this.Defenseur.PV -= degats;
+			this.Defenseur.Caracteristiques.Vitalite -= degats;
 		}
 	#endregion
 }
