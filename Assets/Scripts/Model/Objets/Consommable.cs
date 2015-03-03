@@ -19,14 +19,9 @@ public class Consommable : Objet {
 	/// <param name="nom">Nom.</param>
 	/// <param name="description">Description.</param>
 	/// <param name="prix">Prix.</param>
-	public Consommable (Attaque attaque, string nom, string description, string prix, float drop){
+	public Consommable (Attaque attaque, string nom, string description, int prix, float drop)
+		: base(nom, description, prix, drop)
+	{
 		this._attaque = attaque;
-		this._nom = nom;
-		this._description = description;
-		this._prix = prix;
-		this._tauxDrop = drop;
 	}
-
-
-
 }
