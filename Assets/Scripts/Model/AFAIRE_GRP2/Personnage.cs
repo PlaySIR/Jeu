@@ -51,12 +51,16 @@ public class Personnage : MonoBehaviour {
 	/// </summary>
     private Ecole _ecole;
 
+	/// <summary>
+	/// The equipe.
+	/// </summary>
+	private Team _team;
 	
 	//-----------
 	//constructeur
 
 	/// <summary>
-	/// Initializes a new instance of the <see cref="Personnage"/> class.
+	/// 
 	/// </summary>
 	/// <param name="nom">Nom.</param>
 	/// <param name="race">Race.</param>
@@ -68,9 +72,10 @@ public class Personnage : MonoBehaviour {
 	/// <param name="statut">Statut.</param>
 	/// <param name="buffs">Buffs.</param>
 	/// <param name="ecole">Ecole.</param>
+	/// <param name="team">Team.</param>
 	public Personnage(string nom, Race race, Element element, Caracteristiques carac,
 	                  List<Equipement> equipements,Arme arme, List<Attaque> attaques, Statut statut, 
-	                  List<Buff> buffs, Ecole ecole)
+	                  List<Buff> buffs, Ecole ecole, Team team)
 	{
 				this._nom = nom;
 				this._race = race;
@@ -82,6 +87,7 @@ public class Personnage : MonoBehaviour {
 				this._statut = statut;
 				this._buffs = buffs;
 				this._ecole = ecole;
+				this._team=team;
 	}
 
 	//_______________
@@ -160,13 +166,7 @@ public class Personnage : MonoBehaviour {
 		}
 	}
 
-	/// <summary>
-	/// Ajouts the attaque.
-	/// </summary>
-	/// <param name="attack">Attack.</param>
-	public void ajoutAttaque (Attaque attack){
-		this._attaques.Add (attack);
-	}
+
 
 	/// <summary>
 	/// Gets or sets the statut.
@@ -201,7 +201,24 @@ public class Personnage : MonoBehaviour {
 		}
 	}
 
+	/// <summary>
+	/// Gets the team.
+	/// </summary>
+	/// <value>The team.</value>
+	public Team Team{
+		get{
+			return this._team;
+		}
+	}
 
+
+	/// <summary>
+	/// Ajouts the attaque.
+	/// </summary>
+	/// <param name="attack">Attack.</param>
+	public void ajoutAttaque (Attaque attack){
+		this._attaques.Add (attack);
+	}
 
 
 }

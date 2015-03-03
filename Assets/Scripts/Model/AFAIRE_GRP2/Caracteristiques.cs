@@ -50,6 +50,7 @@ public class Caracteristiques : MonoBehaviour {
 	/// </summary>
 	/// <returns>The vitalite.</returns>
 	public uint Vitalite{
+
 		get{
 			return this._vitalite;
 		}
