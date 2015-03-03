@@ -1,4 +1,4 @@
-﻿﻿using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 
@@ -6,21 +6,12 @@ using System.Collections;
 /// @Autohor : Anne-Claire
 /// </summary>
 public class Consommable : Objet {
-<<<<<<< HEAD
-	
+
 	//Attribut supplémentaire de l'héritage
 	private Attaque _attaque;
 	public Attaque Attaque { get { return this._attaque; } }
 	
-	
-=======
 
-	//Attribut supplémentaire de l'héritage
-    private Attaque _attaque;
-	public Attaque Attaque { get { return this._attaque; } }
-
-
->>>>>>> 80e9539b6b76b5280ba4af06c499831bf96c0811
 	/// <summary>
 	/// Initializes a new instance of the <see cref="Consommable"/> class.
 	/// </summary>
