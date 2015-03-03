@@ -63,7 +63,7 @@ namespace Combat_NS
 		/// <param name="zoneCombatT">Zone combat t.</param>
 		/// <param name="nbTouchesCommunes">Nb touches communes.</param>
 		public Combat(Personnage attaquantT, Personnage defenseurT,
-		              Cellule zoneCombatT, int nbTouchesCommunesT)
+		              Cellule zoneCombatT, uint nbTouchesCommunesT)
 			: base()
 		{
 			this.attaquant = attaquantT;
@@ -142,8 +142,8 @@ namespace Combat_NS
 		{
 			//Init des coef multiplicateurs
 			//(forcés à 1 par défaut)
-			double coefAttaque = Statut_NS.StatutConstants.COEF_NEUT;
-			double coefDefense = Statut_NS.StatutConstants.COEF_NEUT;
+			double coefAttaque = CombatConstants.COEF_NEUT;
+			double coefDefense = CombatConstants.COEF_NEUT;
 			
 			double marqueurStressA = 1; //this.Attaquant.MarqueurStress;
 			double marqueurConfA = 1; //this.Attaquant.MarqueurConf;
@@ -156,7 +156,7 @@ namespace Combat_NS
 			{
 				//Si la case est une case offensive (la seule utile pour un attaquant)
 				//On modifie le coefficient d'attaque
-				Statut_NS.Statut tempStatut = Statut_NS.StatutConstants.OFFENSIF;
+				Statut_NS.Statut tempStatut = new Statut_NS.Statut(Statut_NS.StatutConstants.OFFENSIF);
 				if (this.ZoneCombat.Statut.Equals(tempStatut))
 				{
 					coefAttaque = CombatConstants.COEF_OFF;
@@ -167,7 +167,7 @@ namespace Combat_NS
 			{
 					//Si la case est une case defensive (la seule utile pour un defenseur)
 					//On modifie le coefficient de défense
-					Statut_NS.Statut tempStatut = Statut_NS.StatutConstants.DEFENSIF;
+					Statut_NS.Statut tempStatut = new Statut_NS.Statut(Statut_NS.StatutConstants.DEFENSIF);
 					if (this.ZoneCombat.Statut.Equals(tempStatut))
 					{
 						coefDefense = CombatConstants.COEF_DEFF;

@@ -15,15 +15,15 @@ namespace Statut_NS
 		/// <summary>
 		/// The value of OFFENSIVE tile.
 		/// </summary>
-		public const uint OFFENSIF 	= 2;
+		public const int OFFENSIF 	= 2;
 		/// <summary>
 		/// The value of DEFENSIVE tile.
 		/// </summary>
-		public const uint DEFENSIF 	= 1;
+		public const int DEFENSIF 	= 1;
 		/// <summary>
 		/// The value of NEUTRAL tile.
 		/// </summary>
-		public const uint NEUTRE 	= 0;
+		public const int NEUTRE 	= 0;
 	}
 
 	/// <summary>

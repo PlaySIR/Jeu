@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
+using Statut_NS;
+
 /// <summary>
 /// @Author Kévin & Baptiste
 /// Personnage.
