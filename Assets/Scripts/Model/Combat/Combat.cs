@@ -3,7 +3,7 @@ using System.Collections;
 using System;
 
 /// <summary>
-/// Combat constants.
+/// Combat Namespace.
 /// @author aquettier/Tha1n
 /// </summary>
 namespace Combat_NS
