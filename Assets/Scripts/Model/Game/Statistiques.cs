@@ -65,7 +65,8 @@ public class Statistiques : MonoBehaviour {
 
 
 	public void MondeTermine (Monde fini){
-		this._encours = this._mondes_blockes; //récupère le 1er élement ? j'espère...
+		this._encours = this._mondes_blockes[this._mondes_blockes.Count-1]; //récupère le 1er élement ? j'espère...  
+		// Billel à rajouter [this._mondes_blockes.Count-1] pusique qu'on veut récupéré le dernier éléments de la liste
 		this.Deblocke (this._encours);
 	}
 
