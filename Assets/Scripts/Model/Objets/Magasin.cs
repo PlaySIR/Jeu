@@ -38,6 +38,8 @@ public class Magasin : MonoBehaviour {
 
 	public bool acheter(Objet objet)
 	{
+		return false;
+		//TODO AJOUT RETOURNE FALSE EVITER ERREUR : Billel désolé
 		//TODO Player doit etre codé.
 	}
 }

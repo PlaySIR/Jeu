@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System;
 
@@ -184,7 +184,7 @@ namespace Combat_NS
 
 			//Calcul de la puissance d'attaque
 			double attaque = (double) ((this.Attaquant.Caracteristiques.Force + 
-			                           this.Attaquant.Attaques[this.numAttaqueAttaquant].AttaqueEffets(0))
+			                           this.Attaquant.Attaques[this.numAttaqueAttaquant].AttaqueEffets())
 				* coefAttaque * marqueurConfA * marqueurStressA);
 			int coefAttCrit = this.NbTouchesCommunes - CombatConstants.NB_MAX_TOUCHES_COMMUNES;	//Compris entre 0 et -2
 			coefAttCrit = (int)Math.Abs(coefAttCrit);//Calcul de la valeur absolue

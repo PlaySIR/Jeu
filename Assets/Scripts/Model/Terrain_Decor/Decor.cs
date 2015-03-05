@@ -10,15 +10,15 @@ public class Decor : MonoBehaviour {
 	/// <summary>
 	/// The nom.
 	/// </summary>
-    private string 				nom;
+    private string 				_nom;
 	/// <summary>
 	/// The description.
 	/// </summary>
-    private string 				description;
+    private string 				_description;
 	/// <summary>
 	/// The est franch.
 	/// </summary>
-	private readonly bool		estFranch;
+	private readonly bool		_estFranch;
 
 	/// <summary>
 	/// Initializes a new instance of the <see cref="Decor"/> class.
@@ -29,9 +29,9 @@ public class Decor : MonoBehaviour {
 	public Decor (string nomT, string descriptionT, bool estFranchissableT)
 		: base()
 	{
-		this.nom = nomT;
-		this.description = descriptionT;
-		this.estFranch = estFranchissableT;
+		this._nom = nomT;
+		this._description = descriptionT;
+		this._estFranch = estFranchissableT;
 	}
 
 	/// <summary>
@@ -42,7 +42,9 @@ public class Decor : MonoBehaviour {
 	public Decor (bool estFranchissableT)
 		: base()
 	{
-		this("NoName", "NoDescription", estFranchissableT);
+		this._nom="NoName";
+		this._description="NoDescription";
+		this._estFranch=estFranchissableT;
 	}
 
 	/// <summary>
@@ -52,7 +54,9 @@ public class Decor : MonoBehaviour {
 	public Decor ()
 		: base()
 	{
-		this("NoName", "NoDescription", false);
+		this._nom="NoName";
+		this._description= "NoDescription";
+		this._estFranch=false;
 	}
 
 	#region Decor Getters
@@ -63,7 +67,7 @@ public class Decor : MonoBehaviour {
 	/// <value>The nom.</value>
 	public string Nom {
 		get {
-			return nom;
+			return this._nom;
 		}
 	}
 
@@ -73,7 +77,7 @@ public class Decor : MonoBehaviour {
 	/// <value>The description.</value>
 	public string Description {
 		get {
-			return description;
+			return _description;
 		}
 	}
 
@@ -83,7 +87,7 @@ public class Decor : MonoBehaviour {
 	/// <value><c>true</c> if est franch; otherwise, <c>false</c>.</value>
 	private bool EstFranch {
 		get {
-			return estFranch;
+			return _estFranch;
 		}
 	}
 

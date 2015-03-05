@@ -221,4 +221,12 @@ public class Personnage : MonoBehaviour {
 	}
 
 
+	/// <summary>
+	/// Choice of the attaque.
+	/// </summary>
+	/// <returns>The attaque.</returns>
+	/// <param name="i">The index.</param>
+	public Attaque choixAttaque(int i){
+		return this.Attaques[i];
+	}
 }

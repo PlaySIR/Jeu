@@ -11,7 +11,7 @@ public class Caracteristiques : MonoBehaviour {
 	/// <summary>
 	/// The _vitalite.
 	/// </summary>
-	private uint 			_vitalite;
+	private double 			_vitalite;
 	/// <summary>
 	/// The _force.
 	/// </summary>
@@ -37,7 +37,7 @@ public class Caracteristiques : MonoBehaviour {
 	/// <param name="defense">Defense.</param>
 	/// <param name="initiative">Initiative.</param>
 	/// <param name="pointMouvement">Point mouvement.</param>
-	public Caracteristiques(uint vitalite, uint force, uint defense, uint initiative, uint pointMouvement){
+	public Caracteristiques(double vitalite, uint force, uint defense, uint initiative, uint pointMouvement){
 		this._vitalite=vitalite;
 		this._force=force;
 		this._defense=defense;
@@ -49,7 +49,7 @@ public class Caracteristiques : MonoBehaviour {
 	/// Gets or sets the _vitalite.
 	/// </summary>
 	/// <value>The _vitalite.</value>
-	public uint Vitalite {
+	public double Vitalite {
 		get {
 			return _vitalite;
 		}
@@ -102,7 +102,7 @@ public class Caracteristiques : MonoBehaviour {
 	/// Adds points to the vitalite.
 	/// </summary>
 	/// <param name="points">Points.</param>
-	public void addVitalite(uint points){
+	public void addVitalite(double points){
 		this._vitalite+=points;
 	}
 	

@@ -129,13 +129,28 @@ public class Attaque : MonoBehaviour {
 
 
 	/// <summary>
+	/// Sommes of the effets in the list.
+	/// </summary>
+	/// <returns>The effets.</returns>
+	private uint SommeEffets(){
+		uint somme=0;
+		int nbelem=Effets.Count;
+
+		for(int i=0; i<nbelem;i++){
+			somme+=(uint)Random.Range(this.Effets[i].EffetMin, this.Effets[i].EffetMax);
+		}
+		return somme;
+	}
+
+
+
+	/// <summary>
 	/// Value of the attack through the effect.
 	/// </summary>
 	/// <returns>The attaque.</returns>
-	public uint AttaqueEffets(int i){
-		return (uint)Random.Range(Effets[i].EffetMin,Effets[i].EffetMax);
+	public uint AttaqueEffets(){
+		return SommeEffets();
 	}
-
 
 
 

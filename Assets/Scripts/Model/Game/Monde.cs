@@ -34,18 +34,25 @@ public class Monde : MonoBehaviour {
 	/// <param name="missions">Missions à effectuer sur le monde.</param>
 	/// <param name="fini">Vaut <c>true<c/> si toutes les missions ont été effectuées</param>
 	/// <remarks>1er constructeur : pas d'école sur le monde</remarks>
-	public Monde (string nom, string histoire, Mission[] missions, bool fini){
+	public Monde (string nom, string histoire, Mission[] missions, bool fini, bool disponible){
 		this._nom = nom;
 		this._histoire = histoire;
 		this._missions = missions;
 		this._estFini = fini;
 		this._ecole = null;
-
-		//Opération pour savoir si le monde est disponible ou non
-		this._estDisponible = Statistiques.MondeDisponible(this);
-
+		
 		//On initialise à la 1ère mission
 		this._encours = 0;
+		//Opération pour savoir si le monde est disponible ou non
+
+		this._estDisponible=disponible; 	//Rajout de ma part (billel)
+		//TODO
+		//INCOMPATIBLE
+		//		this._estDisponible = Statistiques.MondeDisponible(this);	
+
+
+
+
 	}
 
 
@@ -65,22 +72,81 @@ public class Monde : MonoBehaviour {
 		this._ecole = ecole;
 		
 		//Opération pour savoir si le monde est disponible ou non
-		this._estDisponible = Statistiques.MondeDisponible(this);
-		
+
+
+
+
+
+		//TODO
+		//INSTRUCTION INCOMPATIBLE 
+		//this._estDisponible = Statistiques.MondeDisponible(this);
+
+
+
+
+
+
+
+
 		//On initialise à la 1ère mission
 		this._encours = 0;
 	} 
 
 
-	//Getters
+	//-------------------------Getters
+
+
+	/// <summary>
+	/// Gets the nom.
+	/// </summary>
+	/// <value>The nom.</value>
 	public string Nom { get { return this._nom;} }
+
+	/// <summary>
+	/// Gets the histoire.
+	/// </summary>
+	/// <value>The histoire.</value>
 	public string Histoire { get { return this._histoire; } }
+
+	/// <summary>
+	/// Gets the missions.
+	/// </summary>
+	/// <value>The missions.</value>
 	public Mission[] Missions { get { return this._missions; } }
+
+	/// <summary>
+	/// Gets a value indicating whether this <see cref="Monde"/> is disponible.
+	/// </summary>
+	/// <value><c>true</c> if disponible; otherwise, <c>false</c>.</value>
 	public bool Disponible { get { return this._estDisponible; } }
+
+	/// <summary>
+	/// Gets a value indicating whether this <see cref="Monde"/> is fini.
+	/// </summary>
+	/// <value><c>true</c> if fini; otherwise, <c>false</c>.</value>
 	public bool Fini { get { return this._estFini; } }
-	public bool EnCours{ get { return this._encours; } }
 
+	/// <summary>
+	/// Gets the en cours.
+	/// </summary>
+	/// <value>The en cours.</value>
+	public int EnCours{ get { return this._encours; } }
 
+	/// <summary>
+	/// Gets the ecole.
+	/// </summary>
+	/// <value>The ecole.</value>
+	public Ecole Ecole{
+		get{
+			return this._ecole;
+		}
+	}
+
+	/// <summary>
+	/// Missions the finie.
+	/// </summary>
+	/// <returns>The finie.</returns>
+	/// <param name="terminee">Terminee.</param>
 	public List<Objet> MissionFinie (Mission terminee){
 		//On incrémente la mission en cours
 		this._encours++;
@@ -100,7 +166,17 @@ public class Monde : MonoBehaviour {
 		//Si toutes les missions sont finies on appelle la fonction "monde terminé" de stats
 		if (fini) {
 			this._estFini = true;
-			Statistiques.MondeTermine(this);
+
+
+			//TODO
+			//INCOMPATIBLE 
+			//Statistiques.MondeTermine(this);
+
+
+
+
+
+
 		}
 
 		return butin;

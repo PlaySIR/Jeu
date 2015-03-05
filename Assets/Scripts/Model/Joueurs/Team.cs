@@ -11,11 +11,11 @@ public class Team : MonoBehaviour {
 	/// <summary>
 	/// The personnages.
 	/// </summary>
-    private Dictionary<string, Personnage> 	personnages;
+    private Dictionary<string, Personnage> 	_personnages;
 	/// <summary>
 	/// The ecole.
 	/// </summary>
-	private Ecole							ecole;
+	private Ecole							_ecole;
 
 	/// <summary>
 	/// Initializes a new instance of the <see cref="Team"/> class.
@@ -24,8 +24,8 @@ public class Team : MonoBehaviour {
 	public Team(Ecole ecoleT)
 		: base()
 	{
-		this.personnages 		= new Dictionary<string, Personnage>();
-		this.ecole 				= ecoleT;
+		this._personnages 		= new Dictionary<string, Personnage>();
+		this._ecole 				= ecoleT;
 	}
 
 #region Team Methods
@@ -36,8 +36,8 @@ public class Team : MonoBehaviour {
 	public void ajoutPersonnage(Personnage p)
 	{
 		//Ajout seulement si le personnage est de la meme école/camp que nous
-		if (p.getEcole () == this.ecole)
-			this.personnages.Add(p.nom, p);
+		if (p.Ecole == this._ecole)
+			this._personnages.Add(p.Nom, p);	//Billel : ajout de Nom au lieu de nom 
 	}
 
 	/// <summary>
@@ -49,7 +49,7 @@ public class Team : MonoBehaviour {
 	{
 		//True si la clé existe, false sinon
 		//Suppression sécurisé
-		return this.personnages.Remove(p.nom);
+		return this._personnages.Remove(p.Nom	);//Billel : ajout de Nom au lieu de nom 
 	}
 
 	/// <summary>
@@ -57,7 +57,7 @@ public class Team : MonoBehaviour {
 	/// </summary>
 	public void clear()
 	{
-		this.personnages.Clear ();
+		this._personnages.Clear ();
 	}
 
 	/// <summary>
@@ -67,7 +67,7 @@ public class Team : MonoBehaviour {
 	/// <returns><c>true</c> if the specified <see cref="Team"/> is equal to the current <see cref="Team"/>; otherwise, <c>false</c>.</returns>
 	public bool Equals(Team obj)
 	{
-		if (this.Personnages.Equals(obj.personnages) &&
+		if (this.Personnages.Equals(obj._personnages) &&
 		    this.Ecole.Equals(obj.Ecole))
 			return true;
 		return false;
@@ -85,7 +85,7 @@ public class Team : MonoBehaviour {
 	{
 		Personnage temp = null;
 
-		this.personnages.TryGetValue (namePerso, out temp);
+		this._personnages.TryGetValue (namePerso, out temp);
 
 		return temp;
 	}
@@ -96,7 +96,7 @@ public class Team : MonoBehaviour {
 	/// <returns>The enumerateur.</returns>
 	public Dictionary<string, Personnage>.Enumerator getEnumerateur()
 	{
-		return this.personnages.GetEnumerator;
+		return this._personnages.GetEnumerator();
 	}
 
 	/// <summary>
@@ -105,7 +105,7 @@ public class Team : MonoBehaviour {
 	/// <returns>The clés.</returns>
 	public Dictionary<string, Personnage>.KeyCollection getClés()
 	{
-		return this.personnages.Keys;
+		return this._personnages.Keys;
 	}
 
 	/// <summary>
@@ -114,13 +114,13 @@ public class Team : MonoBehaviour {
 	/// <value>The ecole.</value>
 	public Ecole Ecole {
 		get {
-			return ecole;
+			return _ecole;
 		}
 	}
 
 	private Dictionary<string, Personnage> Personnages {
 		get {
-			return personnages;
+			return _personnages;
 		}
 	}
 #endregion

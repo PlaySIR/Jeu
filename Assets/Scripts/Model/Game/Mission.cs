@@ -60,7 +60,24 @@ public class Mission : MonoBehaviour {
 		//Si tous les combats sont finis on appelle la fonction "mission finie" de monde
 		if (fini) {
 			this._dejaFait = true;
-			Monde.MissionFinie(this);
+
+
+
+
+
+
+			//TODO
+			//INCOMPATIBLE
+			//Monde.MissionFinie(this);
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		}
 
 		return butin;
