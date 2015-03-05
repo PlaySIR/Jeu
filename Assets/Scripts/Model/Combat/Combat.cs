@@ -43,6 +43,10 @@ namespace Combat_NS
 		/// </summary>
 	    private Personnage attaquant;
 		/// <summary>
+		/// The number attaque attaquant.
+		/// </summary>
+		private int numAttaqueAttaquant;
+		/// <summary>
 		/// The defenseur.
 		/// </summary>
 	    private Personnage defenseur;
@@ -63,10 +67,12 @@ namespace Combat_NS
 		/// <param name="zoneCombatT">Zone combat t.</param>
 		/// <param name="nbTouchesCommunes">Nb touches communes.</param>
 		public Combat(Personnage attaquantT, Personnage defenseurT,
-		              Cellule zoneCombatT, int nbTouchesCommunesT)
+		              Cellule zoneCombatT, int nbTouchesCommunesT,
+		              int numAttaqueT)
 			: base()
 		{
 			this.attaquant = attaquantT;
+			this.numAttaqueAttaquant = numAttaqueT;
 			this.defenseur = defenseurT;
 			this.zoneCombat = zoneCombatT;
 			this.nbTouchesCommunes = nbTouchesCommunesT;
@@ -178,7 +184,7 @@ namespace Combat_NS
 
 			//Calcul de la puissance d'attaque
 			double attaque = (double) ((this.Attaquant.Caracteristiques.Force + 
-			                           this.Attaquant.Attaques[0].AttaqueEffets(0))
+			                           this.Attaquant.Attaques[this.numAttaqueAttaquant].AttaqueEffets(0))
 				* coefAttaque * marqueurConfA * marqueurStressA);
 			int coefAttCrit = this.NbTouchesCommunes - CombatConstants.NB_MAX_TOUCHES_COMMUNES;	//Compris entre 0 et -2
 			coefAttCrit = (int)Math.Abs(coefAttCrit);//Calcul de la valeur absolue
