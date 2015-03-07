@@ -13,6 +13,7 @@ public class Statistiques : MonoBehaviour {
 	private Monde _encours;
 
 	// + Niveau de difficulté ?
+	//Ressemble plus à un univers qu'à des stats !! -> changement de nom ?
 
 
 	/// <summary>
@@ -80,9 +81,8 @@ public class Statistiques : MonoBehaviour {
 
 
 	public void MondeTermine (Monde fini){
-		this._encours = this._mondes_blockes[this._mondes_blockes.Count-1]; //récupère le 1er élement ? j'espère...  
-		// Billel à rajouter [this._mondes_blockes.Count-1] puisque qu'on veut récupéré le dernier éléments de la liste
-		this.Deblocke (this._encours);
+		this._encours = this._mondes_blockes[0]; //récupère le premier élément de la liste blockés
+		this.Deblocke (this._encours);	//appel de la fonction déblocke
 	}
 
 

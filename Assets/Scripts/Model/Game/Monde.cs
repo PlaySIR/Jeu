@@ -13,7 +13,7 @@ public class Monde : MonoBehaviour {
     private string _histoire;
 	private bool _estDisponible;
 	private bool _estFini;
-    private Mission[] _missions;
+    private List<Mission> _missions;
 	private int _encours;		//numéro de la mission en cours
 	private Ecole _ecole;
 
@@ -34,7 +34,7 @@ public class Monde : MonoBehaviour {
 	/// <param name="missions">Missions à effectuer sur le monde.</param>
 	/// <param name="fini">Vaut <c>true<c/> si toutes les missions ont été effectuées</param>
 	/// <remarks>1er constructeur : pas d'école sur le monde</remarks>
-	public Monde (string nom, string histoire, Mission[] missions, bool fini, bool disponible){
+	public Monde (string nom, string histoire, List<Mission> missions, bool fini, bool disponible){
 		this._nom = nom;
 		this._histoire = histoire;
 		this._missions = missions;
@@ -64,7 +64,7 @@ public class Monde : MonoBehaviour {
 	/// <param name="missions">Missions à effectuer sur le monde.</param>
 	/// <param name="fini">Vaut <c>true<c/> si toutes les missions ont été effectuées</param>
 	/// <param name="ecole">Ecole présente sur le monde</param> 
-	public Monde (string nom, string histoire, Mission[] missions, bool fini, Ecole ecole){
+	public Monde (string nom, string histoire, List<Mission> missions, bool fini, Ecole ecole){
 		this._nom = nom;
 		this._histoire = histoire;
 		this._missions = missions;
@@ -112,7 +112,7 @@ public class Monde : MonoBehaviour {
 	/// Gets the missions.
 	/// </summary>
 	/// <value>The missions.</value>
-	public Mission[] Missions { get { return this._missions; } }
+	public List<Mission> Missions { get { return this._missions; } }
 
 	/// <summary>
 	/// Gets a value indicating whether this <see cref="Monde"/> is disponible.
@@ -156,7 +156,7 @@ public class Monde : MonoBehaviour {
 
 		//On vérifie si toutes les missions sont réalisées
 		bool fini = true;
-		for (int i=0; i<this.Missions.Length; ++i) {
+		for (int i=0; i<this.Missions.Count; ++i) {
 			if(i == this._encours){
 				fini=false;
 				break;
