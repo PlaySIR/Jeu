@@ -12,6 +12,7 @@ public class Statistiques : MonoBehaviour {
 	private List<Monde> _mondes_blockes;
 	private Monde _encours;
 
+	// + Niveau de difficulté ?
 
 
 	/// <summary>
@@ -26,19 +27,6 @@ public class Statistiques : MonoBehaviour {
 		this._encours=encours;
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-	// + Niveau de difficulté ?
 
 	/// <summary>
 	/// Initializes a new instance of the <see cref="Statistiques"/> class.
@@ -67,6 +55,7 @@ public class Statistiques : MonoBehaviour {
 	//Getters
 	public List<Monde> MondesDeblockes { get { return this._mondes_deblockes; } }
 	public List<Monde> MondesBlockes { get { return this._mondes_blockes; } }
+
 
 	/// <summary>
 	/// Est-ce que tel monde apparait comme disponible ?

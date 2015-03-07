@@ -15,26 +15,31 @@ public class Mission : MonoBehaviour {
 	private int _actuel;
     private List<Objet> _recompenses;
 	private bool _dejaFait;
+	private Monde _monde;
 
 
 	/// <summary>
 	/// Initializes a new instance of the <see cref="Mission"/> class.
 	/// </summary>
+	/// <param name="monde">Monde dans lequel se trouve la mission</param>
 	/// <param name="combats">Tableau de tous les combats de la mission.</param>
 	/// <param name="recompenses">Liste des récompenses disponibles.</param>
 	/// <param name="fait">Si <c>vrai</c> la mission est déjà faite : pas d'objets rares.</param>
-	public Mission (Combat[] combat, List<Objet> recompenses, bool fait){
+	public Mission (Monde monde, Combat[] combat, List<Objet> recompenses, bool fait){
 		this._recompenses = recompenses;
 		this._combats = combat;
 		this._actuel = 0;
 		this._dejaFait = fait;
+		this._monde = monde;
 	}
 
 
-	//Getters et setters
+	//Getters
 	public Combat[] Combats { get { return this._combats; } }
 	public List<Objet> Recompenses { get { return this._recompenses; } }
 	public int Actuel { get { return this._actuel; } }
+	public Monde Monde { get { return this._monde; } }
+	public bool DejaFait { get { return this.DejaFait; } }
 
 
 	/// <summary>
@@ -60,24 +65,7 @@ public class Mission : MonoBehaviour {
 		//Si tous les combats sont finis on appelle la fonction "mission finie" de monde
 		if (fini) {
 			this._dejaFait = true;
-
-
-
-
-
-
-			//TODO
-			//INCOMPATIBLE
-			//Monde.MissionFinie(this);
-		
-		
-		
-		
-		
-		
-		
-		
-		
+			this._monde.MissionFinie(this);		
 		}
 
 		return butin;

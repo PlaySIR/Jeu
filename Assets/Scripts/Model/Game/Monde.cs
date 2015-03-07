@@ -11,10 +11,10 @@ public class Monde : MonoBehaviour {
 	//Attributs
     private string _nom;
     private string _histoire;
-	private bool _estDisponible; //monde blockés ou visibles ?
-	private bool _estFini;		//monde fini ?
+	private bool _estDisponible;
+	private bool _estFini;
     private Mission[] _missions;
-	private int _encours;		//numéro de la mission en cours, nécessaire ?
+	private int _encours;		//numéro de la mission en cours
 	private Ecole _ecole;
 
    // private List<Personnage> personnagesDisponibles; //Alliés ou PNJ ?
@@ -97,15 +97,15 @@ public class Monde : MonoBehaviour {
 
 
 	/// <summary>
-	/// Gets the nom.
+	/// Gets the name.
 	/// </summary>
-	/// <value>The nom.</value>
+	/// <value>The name.</value>
 	public string Nom { get { return this._nom;} }
 
 	/// <summary>
-	/// Gets the histoire.
+	/// Gets the history.
 	/// </summary>
-	/// <value>The histoire.</value>
+	/// <value>The history.</value>
 	public string Histoire { get { return this._histoire; } }
 
 	/// <summary>
@@ -127,26 +127,26 @@ public class Monde : MonoBehaviour {
 	public bool Fini { get { return this._estFini; } }
 
 	/// <summary>
-	/// Gets the en cours.
+	/// Gets the number of the mission "en cours".
 	/// </summary>
-	/// <value>The en cours.</value>
+	/// <value>The number.</value>
 	public int EnCours{ get { return this._encours; } }
 
 	/// <summary>
-	/// Gets the ecole.
+	/// Gets the school.
 	/// </summary>
-	/// <value>The ecole.</value>
-	public Ecole Ecole{
-		get{
-			return this._ecole;
-		}
-	}
+	/// <value>The school.</value>
+	public Ecole Ecole{ get{ return this._ecole; } }
+
+
+
+
 
 	/// <summary>
-	/// Missions the finie.
+	/// To call when the mission is done.
 	/// </summary>
-	/// <returns>The finie.</returns>
-	/// <param name="terminee">Terminee.</param>
+	/// <returns>List of the loots.</returns>
+	/// <param name="terminee">The mission.</param>
 	public List<Objet> MissionFinie (Mission terminee){
 		//On incrémente la mission en cours
 		this._encours++;
