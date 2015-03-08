@@ -55,7 +55,7 @@ public class Mission : MonoBehaviour {
 		//On regarde s'il reste des combats à effectuer
 		++this._actuel;
 		bool fini = true;
-		for (int i=0; i<this.Combats.Length; ++i) {
+		for (int i=0; i<this._combats.Count; ++i) {
 			if(this._actuel.Equals(i)){
 				fini=false;
 				break;
