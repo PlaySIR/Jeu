@@ -33,6 +33,7 @@ public class Monde : MonoBehaviour {
 	/// <param name="histoire">Histoire du monde.</param>
 	/// <param name="missions">Missions à effectuer sur le monde.</param>
 	/// <param name="fini">Vaut <c>true<c/> si toutes les missions ont été effectuées</param>
+	/// <param name="disponible"> Vaut <c>true</c> si les informations sont visibles</param>
 	/// <remarks>1er constructeur : pas d'école sur le monde</remarks>
 	public Monde (string nom, string histoire, List<Mission> missions, bool fini, bool disponible){
 		this._nom = nom;
@@ -43,15 +44,9 @@ public class Monde : MonoBehaviour {
 		
 		//On initialise à la 1ère mission
 		this._encours = 0;
-		//Opération pour savoir si le monde est disponible ou non
 
-		this._estDisponible=disponible; 	//Rajout de ma part (billel)
-		//TODO
-		//INCOMPATIBLE
-		//		this._estDisponible = Statistiques.MondeDisponible(this);	
-
-
-
+		//Si le monde n'est pas disponible rien ne sera visible
+		this._estDisponible = disponible;
 
 	}
 
@@ -63,30 +58,17 @@ public class Monde : MonoBehaviour {
 	/// <param name="histoire">Histoire du monde.</param>
 	/// <param name="missions">Missions à effectuer sur le monde.</param>
 	/// <param name="fini">Vaut <c>true<c/> si toutes les missions ont été effectuées</param>
+	/// <param name="disponible"> Vaut <c>true</c> si les informations sont visibles</param>
 	/// <param name="ecole">Ecole présente sur le monde</param> 
-	public Monde (string nom, string histoire, List<Mission> missions, bool fini, Ecole ecole){
+	public Monde (string nom, string histoire, List<Mission> missions, bool fini, bool disponible, Ecole ecole){
 		this._nom = nom;
 		this._histoire = histoire;
 		this._missions = missions;
 		this._estFini = fini;
 		this._ecole = ecole;
-		
-		//Opération pour savoir si le monde est disponible ou non
 
-
-
-
-
-		//TODO
-		//INSTRUCTION INCOMPATIBLE 
-		//this._estDisponible = Statistiques.MondeDisponible(this);
-
-
-
-
-
-
-
+		//Si le monde n'est pas disponible rien ne sera visible
+		this._estDisponible = disponible;
 
 		//On initialise à la 1ère mission
 		this._encours = 0;
@@ -163,20 +145,9 @@ public class Monde : MonoBehaviour {
 			}
 		}
 
-		//Si toutes les missions sont finies on appelle la fonction "monde terminé" de stats
+		//Si toutes les missions sont finies on le signale car le monde est terminé
 		if (fini) {
 			this._estFini = true;
-
-
-			//TODO
-			//INCOMPATIBLE 
-			//Statistiques.MondeTermine(this);
-
-
-
-
-
-
 		}
 
 		return butin;

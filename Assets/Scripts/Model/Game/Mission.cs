@@ -50,7 +50,7 @@ public class Mission : MonoBehaviour {
 	public List<Objet> CombatFini (Combat actuel){
 
 		//On génère la récompense du combat
-		List<Objet> butin = GenerateurRecompenses(1,3, !_dejaFait);
+		List<Objet> butin = GenerateurRecompenses(1,3, !_fini);
 
 		//On regarde s'il reste des combats à effectuer
 		++this._actuel;
@@ -64,8 +64,7 @@ public class Mission : MonoBehaviour {
 
 		//Si tous les combats sont finis on le signale
 		if (fini) {
-			this._fini = true;
-			this._monde.MissionFinie(this);		
+			this._fini = true;	
 		}
 
 		return butin;
