@@ -67,7 +67,7 @@ public sealed class Joueur : MonoBehaviour {
 	/// Gets the instance.
 	/// </summary>
 	/// <value>The instance. Instance can be null</value>
-	public Joueur Instance {
+	public static Joueur Instance {
 		get {				
 			return m_instance;
 		}
@@ -77,7 +77,7 @@ public sealed class Joueur : MonoBehaviour {
 	/// Gets a value indicating whether this <see cref="Joueur"/> is instanciated.
 	/// </summary>
 	/// <value><c>true</c> if instanciated; otherwise, <c>false</c>.</value>
-	public bool Instanciated {
+	public static bool Instanciated {
 		get {
 			if (m_instance == null)
 				return false;
