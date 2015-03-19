@@ -42,6 +42,10 @@ public class Attaque : MonoBehaviour {
 	/// </summary>
     private Element				 _element;
 
+	/// <summary>
+	/// The _portee.
+	/// </summary>
+	private uint 				_portee;
 
 
 	/// <summary>
@@ -54,7 +58,7 @@ public class Attaque : MonoBehaviour {
 	/// <param name="cooldown">Cooldown.</param>
 	/// <param name="element">Element.</param>
 	public Attaque(string nom, string description, List<Effets> effets, 
-	               List<Effets> effetsCritiques, int cooldown, Element element){
+	               List<Effets> effetsCritiques, int cooldown, Element element, uint portee){
 
 		this._nom=nom;
 		this._description=description;
@@ -62,6 +66,7 @@ public class Attaque : MonoBehaviour {
 		this._effetsCritiques=effetsCritiques;
 		this._cooldown=cooldown;
 		this._element=element;
+		this._portee=portee;
 	}
 
 
@@ -127,6 +132,15 @@ public class Attaque : MonoBehaviour {
 		}
 	}
 
+	/// <summary>
+	/// Gets the portee of the Attack.
+	/// </summary>
+	/// <value>The portee.</value>
+	public uint Portee{
+		get{
+			return this._portee;
+		}
+	}
 
 	/// <summary>
 	/// Sommes of the effets in the list.
