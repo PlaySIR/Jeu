@@ -12,8 +12,11 @@
 /*.userprefs
 /*.pidb
 /*.booproj
-/*.dia~
+
+# Fichiers spécifiques à notre projet
+/*.cs.meta
 /*.meta
+/*.dia~
 
 #Unity3D Generated File On Crash Reports
 sysinfo.txt
