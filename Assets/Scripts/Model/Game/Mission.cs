@@ -11,7 +11,7 @@ using Combat_NS;
 public class Mission : MonoBehaviour {
 
 	//Attributs
-    private List<Combat> _combats;
+    private List<GestionCombat> _combats;
 	private int _actuel;
     private List<Objet> _recompenses;
 	private bool _fini;
@@ -25,7 +25,7 @@ public class Mission : MonoBehaviour {
 	/// <param name="combats">Liste de tous les combats de la mission.</param>
 	/// <param name="recompenses">Liste des récompenses disponibles.</param>
 	/// <param name="fait">Si <c>vrai</c> la mission est déjà faite : pas d'objets rares.</param>
-	public Mission (Monde monde, List<Combat> combat, List<Objet> recompenses, bool fait){
+	public Mission (Monde monde, List<GestionCombat> combat, List<Objet> recompenses, bool fait){
 		this._recompenses = recompenses;
 		this._combats = combat;
 		this._actuel = 0;
@@ -35,7 +35,7 @@ public class Mission : MonoBehaviour {
 
 
 	//Getters
-	public List<Combat> Combats { get { return this._combats; } }
+	public List<GestionCombat> Combats { get { return this._combats; } }
 	public List<Objet> Recompenses { get { return this._recompenses; } }
 	public int Actuel { get { return this._actuel; } }
 	public Monde Monde { get { return this._monde; } }
@@ -47,7 +47,7 @@ public class Mission : MonoBehaviour {
 	/// </summary>
 	/// <param name="actuel">Combat actuel.</param>
 	/// <returns>Les récompenses du combat.</returns>
-	public List<Objet> CombatFini (Combat actuel){
+	public List<Objet> CombatFini (GestionCombat actuel){
 
 		//On génère la récompense du combat
 		List<Objet> butin = GenerateurRecompenses(1,3, !_fini);
