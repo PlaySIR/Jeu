@@ -55,6 +55,11 @@ public class Personnage : MonoBehaviour {
 	/// The equipe.
 	/// </summary>
 	private Team _team;
+
+	/// <summary>
+	/// This _is my turn.
+	/// </summary>
+	private bool _isMyTurn;
 	
 	//-----------
 	//constructeur
@@ -88,6 +93,7 @@ public class Personnage : MonoBehaviour {
 				this._buffs = buffs;
 				this._ecole = ecole;
 				this._team=team;
+				this._isMyTurn=false;
 	}
 
 	//_______________
@@ -229,4 +235,36 @@ public class Personnage : MonoBehaviour {
 	public Attaque choixAttaque(int i){
 		return this.Attaques[i];
 	}
+
+	/// <summary>
+	/// Gets or sets a value indicating whether this instance is my turn.
+	/// </summary>
+	/// <value><c>true</c> if this instance is my turn; otherwise, <c>false</c>.</value>
+	public bool IsMyTurn{
+		get{
+			return this._isMyTurn;
+		}
+		set{
+			this._isMyTurn = value;
+		}
+	}
+
+
+	public void DecrementerBuff(){
+		//TODO void DECREMENTER BUFF 
+		//Steven & Billel
+
+	}
+
+	/// <summary>
+	/// Dead this instance.
+	/// </summary>
+	public bool  Dead(){
+	return  Caracteristiques.Vitalite <= 0 ; 
+	}
+
+
+
+
+
 }
