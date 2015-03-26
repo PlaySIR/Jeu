@@ -250,7 +250,7 @@ public class Personnage : MonoBehaviour {
 	}
 
 
-	void DecrementerBuff(){
+	public void DecrementerBuff(){
 		//TODO void DECREMENTER BUFF 
 		//Steven & Billel
 
@@ -259,7 +259,7 @@ public class Personnage : MonoBehaviour {
 	/// <summary>
 	/// Dead this instance.
 	/// </summary>
-	bool  Dead(){
+	public bool  Dead(){
 	return  Caracteristiques.Vitalite <= 0 ; 
 	}
 
