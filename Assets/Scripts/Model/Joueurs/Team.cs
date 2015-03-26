@@ -2,6 +2,19 @@
 using System.Collections;
 using System.Collections.Generic;
 
+
+public class ComparateurInitiative : Comparer<Personnage>
+{
+
+
+}
+
+
+
+
+
+
+
 /// <summary>
 /// Team.
 /// @author aquettier/Tha1n
@@ -11,7 +24,7 @@ public class Team : MonoBehaviour {
 	/// <summary>
 	/// The personnages.
 	/// </summary>
-    private Dictionary<string, Personnage> 	_personnages;
+    private List<Personnage> 	_personnages;
 	/// <summary>
 	/// The ecole.
 	/// </summary>
@@ -24,7 +37,7 @@ public class Team : MonoBehaviour {
 	public Team(Ecole ecoleT)
 		: base()
 	{
-		this._personnages 		= new Dictionary<string, Personnage>();
+		this._personnages 			= new List<Personnage>();
 		this._ecole 				= ecoleT;
 	}
 
@@ -37,7 +50,9 @@ public class Team : MonoBehaviour {
 	{
 		//Ajout seulement si le personnage est de la meme école/camp que nous
 		if (p.Ecole == this._ecole)
-			this._personnages.Add(p.Nom, p);	//Billel : ajout de Nom au lieu de nom 
+			this._personnages.Add(p);
+
+		this._personnages.Sort(;//TODO
 	}
 
 	/// <summary>
@@ -49,7 +64,7 @@ public class Team : MonoBehaviour {
 	{
 		//True si la clé existe, false sinon
 		//Suppression sécurisé
-		return this._personnages.Remove(p.Nom	);//Billel : ajout de Nom au lieu de nom 
+		return this._personnages.Remove(p.Nom); 
 	}
 
 	/// <summary>
