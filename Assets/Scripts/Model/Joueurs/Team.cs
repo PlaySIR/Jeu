@@ -2,18 +2,27 @@
 using System.Collections;
 using System.Collections.Generic;
 
-
+/// <summary>
+/// Comparateur d'initiative pour des Personnage.
+/// Comparaison effectué par ordre décroissant
+/// @author aquettier/Tha1n
+/// </summary>
 public class ComparateurInitiative : Comparer<Personnage>
 {
+	public override int Compare(Personnage x, Personnage y)
+	{
+		//Mis à 0 de base: les deux initiatives sont égales
+		int result = 0;
 
+		if (x.Caracteristiques.Initiative < y.Caracteristiques.Initiative)
+			result = 1;
+		else if (x.Caracteristiques.Initiative > y.Caracteristiques.Initiative)
+			result = -1;
+
+		return result;
+	}
 
 }
-
-
-
-
-
-
 
 /// <summary>
 /// Team.
@@ -52,7 +61,7 @@ public class Team : MonoBehaviour {
 		if (p.Ecole == this._ecole)
 			this._personnages.Add(p);
 
-		this._personnages.Sort(;//TODO
+		this._personnages.Sort(new ComparateurInitiative());
 	}
 
 	/// <summary>
@@ -64,7 +73,7 @@ public class Team : MonoBehaviour {
 	{
 		//True si la clé existe, false sinon
 		//Suppression sécurisé
-		return this._personnages.Remove(p.Nom); 
+		return this._personnages.Remove(p); 
 	}
 
 	/// <summary>
@@ -72,7 +81,7 @@ public class Team : MonoBehaviour {
 	/// </summary>
 	public void clear()
 	{
-		this._personnages.Clear ();
+		this._personnages.Clear();
 	}
 
 	/// <summary>
@@ -88,39 +97,24 @@ public class Team : MonoBehaviour {
 		return false;
 	}
 
+	/// <summary>
+	/// Force to sort the team by initiative.
+	/// </summary>
+	public void sortTeamByInitiative()
+	{
+		this._personnages.Sort(new ComparateurInitiative());
+	}
+
 #endregion
 #region Team Getters
-
-	/// <summary>
-	/// Gets the personnage by his name.
-	/// </summary>
-	/// <returns>The personnage by name.</returns>
-	/// <param name="namePerso">Name perso.</param>
-	public Personnage getPersonnageByName(string namePerso)
-	{
-		Personnage temp = null;
-
-		this._personnages.TryGetValue (namePerso, out temp);
-
-		return temp;
-	}
 
 	/// <summary>
 	/// Gets the enumerateur.
 	/// </summary>
 	/// <returns>The enumerateur.</returns>
-	public Dictionary<string, Personnage>.Enumerator getEnumerateur()
+	public List<Personnage>.Enumerator getEnumerateur()
 	{
 		return this._personnages.GetEnumerator();
-	}
-
-	/// <summary>
-	/// Gets the clés.
-	/// </summary>
-	/// <returns>The clés.</returns>
-	public Dictionary<string, Personnage>.KeyCollection getClés()
-	{
-		return this._personnages.Keys;
 	}
 
 	/// <summary>
@@ -133,7 +127,7 @@ public class Team : MonoBehaviour {
 		}
 	}
 
-	private Dictionary<string, Personnage> Personnages {
+	private List<Personnage> Personnages {
 		get {
 			return _personnages;
 		}
