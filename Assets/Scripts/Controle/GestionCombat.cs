@@ -24,15 +24,17 @@ public class GestionCombat : MonoBehaviour {
 		this._ennemies = ennemis;
 		this._map = map;
 		this._indexTour = 0;
+		this._listInitiatiative = new List<Personnage>();
+		//TODO Fusion des deux Team, puis trier listInitiative par ordre d'initiative
 
-		//TODO trie listInitiative par ordre d'initiative : Fusion des deux Team
+		this._persoCourant = this._listInitiatiative[this._indexTour];
 	}
 
 	public void FinTour(){
 		_persoCourant.DecrementerBuff() ;
 		_persoCourant.IsMyTurn = false;
-		_indexTour = (_indexTour+1) % _listInitiatiative.Count;
-
+		_indexTour = (_indexTour + 1) % _listInitiatiative.Count;
+		_persoCourant = _listInitiatiative[_indexTour];
 	}
 
 
