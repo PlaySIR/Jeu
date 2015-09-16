@@ -10,7 +10,7 @@ public class GestionCombat : MonoBehaviour {
 	private Team _ennemies;
 	private Cellule [][] _map;
 	private Personnage _persoCourant;
-	private uint _indexTour;
+	private int _indexTour;
 
 	/// <summary>
 	/// Initializes a new instance of the <see cref="GestionCombat"/> class.
